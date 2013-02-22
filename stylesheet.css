@@ -13,7 +13,7 @@ h1 {
 	
 	padding-left:2%;
 	color:white;
-	font-size:large;	
+	font-size:xx-large;	
 	font-weight:600;
 }
 #textbox{
@@ -60,6 +60,8 @@ h1 {
 #tabs{
 	width:100%;
 	background-color:#20124d;
+	font-size:large;
+	
 	
 	
 }
@@ -96,7 +98,6 @@ h1 {
 	float:left;
 	background-color:#20124d;
 	color:white;
-	font-weight:bold;
 	text-align:center;
 	border:solid thin;
 	border-color:black;
@@ -108,24 +109,26 @@ h1 {
 	float:right;
 	background-color:#20124d;
 	color:white;
-	font-weight:bold;
-	text-align:center;
 	border:solid thin;
 	border-color:black;
 	border-radius:15px;
+	text-align:center;
 }
 
 #table-wrapper {
+	margin-left:20%;
+	margin-right:20%;
   position:relative;
+  	font-size:smaller;
+  	text-align:left;
 }
 #table-scroll {
-  float:left;
   height:150px;
   overflow:auto;  
   margin-top:20px;
 }
 #table-wrapper table {
-  width:60%;
+  width:100%;
     
 }
 #table-wrapper table * {
