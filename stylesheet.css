@@ -114,10 +114,26 @@ h1 {
 	border-radius:15px;
 	text-align:center;
 }
+#footer{
+	color:white;
+	min-height: 84px;
+	margin: 0;
+	padding: 0 24px;
+	border-left: solid thick;
+	border-right: solid thick;
+	border-bottom: solid thick;
+	border-left-color: black;
+	border-right-color: black;
+	border-bottom-color: black;
+
+	background-color:#2268a6;
+	
+}
 
 #table-wrapper {
 	margin-left:20%;
 	margin-right:20%;
+	margin-bottom:10px;
   position:relative;
   	font-size:smaller;
   	text-align:left;
