@@ -32,7 +32,7 @@ h1{
 	padding-left:2%;
 	color:white;
 	font-size:xx-large;	
-	font-weight:600;
+	
 }
 
 #textbox{
@@ -72,6 +72,7 @@ h1{
 }
 
 #tabs{
+	float:left;
 	height: 5%;
 	width:100%;
 	font-size:large;
@@ -83,7 +84,7 @@ h1{
 	margin-right:auto;
 	margin-bottom:10px;
 	min-width:240px;
-	max-width:49%;
+	max-width:100%;
 	
 }
 
@@ -97,7 +98,7 @@ h1{
 
 .img2{
 	width:100%;
-
+	float:left;
 }
 
 .img3{
@@ -115,7 +116,7 @@ h1{
 	text-align:center;
 	border:solid thin;
 	border-color:black;
-	border-radius:15px;
+	border-radius:10px;
 }
 
 
@@ -127,7 +128,7 @@ h1{
 	color:white;
 	border:solid thin;
 	border-color:black;
-	border-radius:15px;
+	border-radius:10px;
 	text-align:center;
 }
 
@@ -147,18 +148,17 @@ h1{
 #table-wrapper {
 	padding-left:2%;
 	float:left;
-	margin-left:auto;
-	margin-right:auto;
-	margin-bottom:10px;
+
 	min-width:240px;
 	max-width:100%;
+	
 	font-size:smaller;
 	text-align:left;
+	overflow:auto;
 }
 
 #table-scroll {
-	min-height:150px;
-	max-height:100%;
+	height:150px;
 	overflow:auto;
 	margin-top:20px;
 }
@@ -417,3 +417,9 @@ h1{
 .vertical [type=radio]:checked ~ label ~ .content, .vertical [type=checkbox]:checked ~ label ~ .content {
     height:50%;
     border:1px solid #542437;}
+    
+#vertscroll {
+	height:150px;
+	overflow:auto;
+	margin-top:20px;
+}
