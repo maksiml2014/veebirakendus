@@ -417,3 +417,12 @@ h1{
 .vertical [type=radio]:checked ~ label ~ .content, .vertical [type=checkbox]:checked ~ label ~ .content {
     height:50%;
     border:1px solid #542437;}
+    
+ 
+#vertscroll {
+	height:150px;
+	overflow:auto;
+	margin-top:20px;
+}
+ 
+    
