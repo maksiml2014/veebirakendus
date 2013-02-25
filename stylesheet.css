@@ -1,11 +1,11 @@
-#body{
-margin-right:auto;
-margin-left:auto;
-width:100%;
-overflow: hidden;
-background-color:#6fa8dc;
-font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-border: solid thick;
+﻿#body{
+	margin-right:auto;
+	margin-left:auto;
+	width:100%;
+	overflow: hidden;
+	background-color:#6fa8dc;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	border: solid thick;
 }
 
 
@@ -234,7 +234,9 @@ h1{
 
 #textarea{
 	width:100%;
+	max-width:90%;
 	height:150px;
+	margin-left:25px;
 }
 
 #search-bg{
@@ -249,16 +251,6 @@ h1{
 #wrapper{
     width: 100%;
     overflow: hidden;
-}
-
-#area-list{
-	width:435px;
-    float:left;
-}
-
-#party-list{
-	width:600px;
-    float: left;
 }
 
 #choose{
