@@ -3,7 +3,6 @@
 	<head>
 		<title>e-valimised</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 		<link href="stylesheet.css" rel="stylesheet" media="screen">
 	</head>
 	<body>
@@ -14,7 +13,10 @@
 					<h1>e-valimised</h1>
 				</div>
 				<div id="headerright">
-					<img class="img3" alt="" src="fb.png">
+					<p>Oled sisenenud kui Mari Maasikas.</p>
+					<div id="searchbutton">
+    					<input type="submit" name="o" value="Välju" />
+					</div>
 				</div>
 			</div>
 			<div id = "tabs">
@@ -31,16 +33,14 @@
             <table id="search-bg">
             <tr>
             <td>
-            <input type="hidden" name="domains" value="mysite.com" />
-            <label for="sbi" style="display: none">Enter your search terms</label>
-            <input type="text" name="q" size="31" maxlength="255" value="" id="sbi" />
+            <input type="search" id="search-box"/>
             </td></tr>
             </table>          
             </form>
             </div>
 			<div id="wrapper">
-    		<div id="first">
-    			<p id="text">Vali piirkond:</p>
+    		<div id="area-list">
+    			<p id="choose">Vali piirkond:</p>
     			<div id="wrapper-new">
     				<div id="table-scroll">
     				<form>
@@ -84,8 +84,8 @@
     				</div>
     			</div>
     		</div>
-    		<div id="second">
-    		<p id="text">Vali erakond:</p>
+    		<div id="party-list">
+    		<p id="choose">Vali erakond:</p>
     			<div id="wrapper-new">
     				<div id="table-scroll">
     				<form>
@@ -119,87 +119,156 @@
 						</table>
 					</form>
     				</div>
-    				<div id="search">
+    				<div id="searchbutton">
     					<input type="submit" name="o" value="Otsi" />
 					</div>
     			</div>
     		</div>
     		</div>
-    		<div class="accordion vertical">
-    		<div id="acc-scroll">
+    <div class="accordion vertical">
+    <div id="acc-scroll">
     <ul>
         <li>
             <input type="radio" id="radio-1" name="radio-accordion" checked="checked" />
             <label for="radio-1">Edgar Savisaar</label>
             <div class="content">
+            <div id="itemL">
                 <h3>Isiklik info</h3>
                 <p>.................................................................................</p>
                 <h3>Valimislubadused</h3>
                 <p>.................................................................................</p>
                 <h3>Kandidaadi number: xxx</h3>
+                <div id="votebutton">
+    					<input type="submit" name="o" value="Hääleta" />
+				</div>
+				<div id="votebutton">
+    					<input type="submit" name="o" value="Tühista hääl" />
+				</div>
+             </div>
+             <div id="pic-text">
+                <img height="148" width="131" id="pic-text" alt="Edgar Savisaar" src="savisaar.png">
+                
+             </div>
+             
             </div>
         </li>
         <li>
             <input type="radio" id="radio-2" name="radio-accordion" />
             <label for="radio-2">Andrus Ansip</label>
             <div class="content">
-                 <h3>Isiklik info</h3>
+            <div id="itemL">
+				<h3>Isiklik info</h3>
                 <p>.................................................................................</p>
                 <h3>Valimislubadused</h3>
                 <p>.................................................................................</p>
                 <h3>Kandidaadi number: xxx</h3>
+                <div id="votebutton">
+    					<input type="submit" name="o" value="Hääleta" />
+				</div>
+				<div id="votebutton">
+    					<input type="submit" name="o" value="Tühista hääl" />
+    			</div>
+			</div>
+			<div id="pic-text">
+                <img height="165" width="121" id="pic-text" alt="Andrus Ansip" src="ansip.png">   
+            </div>
  			</div>
         </li>
         <li>
             <input type="radio" id="radio-3" name="radio-accordion" />
             <label for="radio-3">Mart Laar</label>
             <div class="content">
-                 <h3>Isiklik info</h3>
+            <div id="itemL">
+                <h3>Isiklik info</h3>
                 <p>.................................................................................</p>
                 <h3>Valimislubadused</h3>
                 <p>.................................................................................</p>
                 <h3>Kandidaadi number: xxx</h3>
+                <div id="votebutton">
+    					<input type="submit" name="o" value="Hääleta" />
+				</div>
+				<div id="votebutton">
+    					<input type="submit" name="o" value="Tühista hääl" />
+				</div>
+			</div>
+			<div id="pic-text">
+                <img height="146" width="150" id="pic-text" alt="Mart Laar" src="laar.png">   
+            </div>
 			</div>
         </li>
         <li>
             <input type="radio" id="radio-4" name="radio-accordion" />
             <label for="radio-4">Sven Mikser</label>
             <div class="content">
-                 <h3>Isiklik info</h3>
+            <div id="itemL">
+                <h3>Isiklik info</h3>
                 <p>.................................................................................</p>
                 <h3>Valimislubadused</h3>
                 <p>.................................................................................</p>
                 <h3>Kandidaadi number: xxx</h3>
+                <div id="votebutton">
+    					<input type="submit" name="o" value="Hääleta" />
+				</div>
+				<div id="votebutton">
+    					<input type="submit" name="o" value="Tühista hääl" />
+				</div>
+			</div>
+			<div id="pic-text">
+                <img height="160" width="108" id="pic-text" alt="Sven Mikser" src="mikser.png">   
+            </div>
 			</div>
         </li>
          <li>
             <input type="radio" id="radio-5" name="radio-accordion" />
             <label for="radio-5">Aleksei Lotman</label>
             <div class="content">
+            <div id="itemL">
                  <h3>Isiklik info</h3>
                 <p>.................................................................................</p>
                 <h3>Valimislubadused</h3>
                 <p>.................................................................................</p>
                 <h3>Kandidaadi number: xxx</h3>
+                <div id="votebutton">
+    					<input type="submit" name="o" value="Hääleta" />
+				</div>
+				<div id="votebutton">
+    					<input type="submit" name="o" value="Tühista hääl" />
+				</div>
+				</div>
+			<div id="pic-text">
+                <img height="120" width="118" id="pic-text" alt="Aleksei Lotman" src="lotman.png">   
+            </div>
 			</div>
-        </li>
-		 <li>
+		</li>
+		<li>
             <input type="radio" id="radio-6" name="radio-accordion" />
             <label for="radio-6">Ero Liivik</label>
             <div class="content">
-                 <h3>Isiklik info</h3>
+            <div id="itemL">
+                <h3>Isiklik info</h3>
                 <p>.................................................................................</p>
                 <h3>Valimislubadused</h3>
                 <p>.................................................................................</p>
                 <h3>Kandidaadi number: xxx</h3>
+                <div id="votebutton">
+    					<input type="submit" name="o" value="Hääleta" />
+				</div>
+				<div id="votebutton">
+    					<input type="submit" name="o" value="Tühista hääl" />
+				</div>
+				</div>
+			<div id="pic-text">
+                <img height="151" width="114" id="pic-text" alt="Ero Liivik" src="liivik.png">   
+            </div>
 			</div>
         </li>
     </ul>
     </div>
-</div>    		</div>
-    	
-    		
-			
+	</div>
+	 <div id="addbutton">
+		<input type="submit" name="o" value="Lisa ennast kandidaadiks" />
+	</div> 		
+	</div>
 			<!--<script src="http://code.jquery.com/jquery.js"></script>-->
 			<!--<script src="js/bootstrap.min.js"></script>-->
 		
@@ -210,6 +279,5 @@
 			Veebruar 2013
 			
 		</div>
-		<p class="newStyle1"></p>
 	</body>
 </html>

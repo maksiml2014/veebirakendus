@@ -1,11 +1,11 @@
-#body{
-margin-right:auto;
-margin-left:auto;
-width:100%;
-overflow: hidden;
-background-color:#6fa8dc;
-font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-border: solid thick;
+﻿#body{
+	margin-right:auto;
+	margin-left:auto;
+	width:100%;
+	overflow: hidden;
+	background-color:#6fa8dc;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	border: solid thick;
 }
 
 #header{
@@ -55,7 +55,7 @@ h1{
 }
 
 #headerleft{
-	width:80%;
+	width:50%;
 	float:left;
 	color:white;
 	font-weight:bold;
@@ -63,7 +63,7 @@ h1{
 
 #headerright{
 	padding-right:2%;
-	width:10%;
+	width:30%;
 	float:right;
 	color:white;
 	font-size:small;
@@ -77,13 +77,7 @@ h1{
 }
 
 #map{
-	float:left;
-	margin-left:auto;
-	margin-right:auto;
-	margin-bottom:10px;
-	min-width:240px;
-	max-width:49%;
-	
+	width:100%;
 }
 
 .img{
@@ -95,8 +89,8 @@ h1{
 }
 
 .img2{
-	width:100%;
-
+	width:60%;
+	padding-left:20%;	
 }
 
 .img3{
@@ -119,7 +113,7 @@ h1{
 
 #righttab{
 	height: 100%;
-	width:48%;
+	width:49%;
 	float:right;
 	background-color:#20124d;
 	color:white;
@@ -130,9 +124,10 @@ h1{
 }
 
 #footer{
-	width:100%;
 	color:white;
 	height: 20%;
+	margin: 0;
+	padding: 0 24px;
 	border-left: solid thick;
 	border-right: solid thick;
 	border-bottom: solid thick;
@@ -143,12 +138,9 @@ h1{
 }
 
 #table-wrapper {
-	float:left;
-	margin-left:auto;
-	margin-right:auto;
+	margin-left:25%;
 	margin-bottom:10px;
-	min-width:240px;
-	max-width:49%;
+	width:49%;
 	font-size:smaller;
 	text-align:left;
 }
@@ -227,45 +219,41 @@ h1{
 	overflow:hidden;
 }
 
+#textarea{
+	width:100%;
+	height:150px;
+}
 
 #search-bg{
 	background-color:#6fa8dc;
-	padding-left:25px
+	padding-left:2%;
 }
 
-#wrapper {
-    width: 1050px;
+#search-box{
+	max-width:100%;
+}
+
+#wrapper{
+    width: 100%;
     overflow: hidden;
 }
 
-#first {
-	width: 435px;
+#area-list{
+	width:435px;
     float:left;
 }
 
-#second {
+#party-list{
 	width:600px;
     float: left;
 }
 
-#area{
-	width:100%;
-	text-align:left;
-}
-
-#text{
+#choose{
 	color:#FFFFFF;
 	font-size:medium;
 	font-weight:bolder;
 	text-align:left;
-	padding-left:25px;
-}
-
-#text2{
-	color:#FFFFFF;
-	font-size:medium;
-	font-weight:bolder;
-	padding-left:150px;
+	padding-left:5%;
 }
 
 #wrapper-new{
@@ -294,18 +282,46 @@ h1{
   	border:1px solid red;
 }
 
-#search{
+#searchbutton{
 	padding-top:10px;
+	padding-bottom:10px;
 	text-align:right;
+	float:right;
+}
+#addbutton{
+	padding:2%;
+	text-align:center;
 }
 
+#acc-scroll{
+  height:400px;
+  overflow:auto;  
+  margin-top:20px;
+}
+#pic-text{
+	float:right;
+	padding:2%;
+}
+
+#votebutton{
+	padding-top:10px;
+	text-align:left;
+	float:left;
+	padding-right:2px;
+}
+
+.nimi{
+	padding-top:2%;
+	text-align:right;
+}
+/*http://www.mraffaele.com/labs/css-only-accordions/*/
 .accordion {
     font-family:Arial, Helvetica, sans-serif; 
     margin:0 auto;
     font-size:14px;
     border:1px solid #2268a6;
     border-radius:10px;
-    width:600px;
+    width:50%;
     padding:10px;
     background:#fff;
 }
@@ -388,17 +404,6 @@ h1{
 }
 
 .vertical [type=radio]:checked ~ label ~ .content, .vertical [type=checkbox]:checked ~ label ~ .content {
-    height:300px;
+    height:50%;
     border:1px solid #542437;
-}
-
-#acc-scroll{
-  height:400px;
-  overflow:auto;  
-  margin-top:20px;
-}
-
-#textarea{
-	width:100%;
-	height:150px;
 }
