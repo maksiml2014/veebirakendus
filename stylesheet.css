@@ -158,7 +158,8 @@ h1{
 }
 
 #table-scroll {
-	height:150px;
+	min-height:150px;
+	max-height:100%;
 	overflow:auto;
 	margin-top:20px;
 }
@@ -417,7 +418,7 @@ h1{
 .vertical [type=radio]:checked ~ label ~ .content, .vertical [type=checkbox]:checked ~ label ~ .content {
     height:50%;
     border:1px solid #542437;}
-    
+
 #vertscroll {
 	height:150px;
 	overflow:auto;
