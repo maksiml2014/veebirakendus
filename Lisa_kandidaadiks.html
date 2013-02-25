@@ -3,36 +3,34 @@
 	<head>
 		<title>e-valimised</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
 		<link href="stylesheet.css" rel="stylesheet" media="screen"/>
 	</head>
 	<body>
 		<div id="body">
-			<div id="header">
 				<div id="headerbig">
 					<div id="headerleft">
-						<img class="img" alt="" src="Valimised2011Logo1.jpg"/>
-						<h1>e-valimised</h1>
-					</div>
+					<img class="img" alt="" src="Valimised2011Logo1.png">
+					<h1>e-valimised</h1>
+				</div>
 					<div id="headerright">
 						<img class="img3" alt="" src="fb.png"/>
 					</div>
 				</div>
 				<div id = "tabs">
 					<div id="lefttab">
-						Statistika
+						<a href="Statistika.html"> Statistika </a>
 					</div>
 					<div id="righttab">
-						Kandidaadid
+						<a href="login.html" >Kandidaadid</a>
 					</div>
 				</div>
 				<h1> Lisa end kandidaadiks </h1>
-			</div>
+			
 
 			<div id="row">
 				<div id="itemL">
-					<h1>Vali piirkond:</h1>
-					<div id="radiobuttons">
+					<p id="choose">Vali piirkond:</p>
+					<div id="wrapper-new">
      					<div id="vertscroll">
      					<form>
      						<table>
@@ -58,9 +56,9 @@
 				     	</div>
 					</div>
 				</div>
-				<div id="itemR">
-					<h1>Vali erakond:</h1>
-     				<div id="radiobuttons">
+				<div id="itemL">
+					<p id="choose">Vali erakond:</p>
+     				<div id="wrapper-new">
      					<div id="vertscroll">
      					<form>
      						<table>
@@ -85,13 +83,26 @@
 			</div>
 			<div id="row">
 				<div id="itemL">
-					<h1> Lühikirjeldus: </h1>
+					<p id="choose"> Lühikirjeldus: </p>
 					<textarea id="textarea"></textarea>
-															
+					<div id="addbutton">
+						<input type="submit" name="o" value="Lisa ennast kandidaadiks" />
+					</div>					
 				</div>
-				<div id="itemR">
-
+				<div id="itemL">
+					<p id="choose"> Lisa pilt:</p>
+					<div>
+					<form>
+            		<table id="search-bg">
+            		<tr>
+            		<td>
+            		<input type="file" id="search-box" name="browse"/>
+            		<input type="submit" name="lisa" value="Lisa"/>
+            		</td></tr>
+            		</table>          
+            		</form>
 				</div>
+			</div>
 			</div>
 		</div>	
 
