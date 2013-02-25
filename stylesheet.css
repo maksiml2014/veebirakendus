@@ -1,4 +1,4 @@
-﻿#body{
+#body{
 margin-right:auto;
 margin-left:auto;
 width:100%;
@@ -17,12 +17,14 @@ border: solid thick;
 	width:49%;
 	height:30%;
 	float:left;
+	min-width:240px;
 }
 
 #itemR{
 	width:49%;
 	height:30%;
 	float:right;
+	min-width:240px;
 }
 
 #row{
@@ -218,10 +220,9 @@ h1{
 
 #radiobuttons{
 	color:white;
-	background-color:#20124d;
-	float: left;
-	width: 100%;
-	height:20%;
+	overflow:hidden;
+	text-align:left;
+	height: 20%;
 	overflow:hidden;
 }
 
@@ -394,4 +395,9 @@ h1{
   height:400px;
   overflow:auto;  
   margin-top:20px;
+}
+
+#textarea{
+	width:100%;
+	height:150px;
 }
