@@ -60,7 +60,7 @@ h1{
 }
 
 #headerleft{
-	width:50%;
+	width:80%;
 	float:left;
 	color:white;
 	font-weight:bold;
@@ -68,7 +68,7 @@ h1{
 
 #headerright{
 	padding-right:2%;
-	width:30%;
+	width:10%;
 	float:right;
 	color:white;
 	font-size:small;
@@ -118,7 +118,7 @@ h1{
 
 #righttab{
 	height: 100%;
-	width:49%;
+	width:48%;
 	float:right;
 	background-color:#20124d;
 	color:white;
