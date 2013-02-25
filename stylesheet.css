@@ -28,6 +28,7 @@ border: solid thick;
 }
 
 h1{
+	
 	padding-left:2%;
 	color:white;
 	font-size:xx-large;	
@@ -62,7 +63,7 @@ h1{
 }
 
 #headerright{
-	padding-right:2%;
+	margin-right:2%;
 	width:10%;
 	float:right;
 	color:white;
@@ -117,6 +118,7 @@ h1{
 	border-radius:15px;
 }
 
+
 #righttab{
 	height: 100%;
 	width:48%;
@@ -143,18 +145,20 @@ h1{
 }
 
 #table-wrapper {
+	padding-left:2%;
 	float:left;
 	margin-left:auto;
 	margin-right:auto;
 	margin-bottom:10px;
 	min-width:240px;
-	max-width:49%;
+	max-width:100%;
 	font-size:smaller;
 	text-align:left;
 }
 
 #table-scroll {
-	height:150px;
+	min-height:150px;
+	max-height:100%;
 	overflow:auto;
 	margin-top:20px;
 }
@@ -197,7 +201,7 @@ h1{
 }
 
 #table-scroll {
-	height:150px;
+	height:auto;
 	overflow:auto;
 	margin-top:20px;
 }
