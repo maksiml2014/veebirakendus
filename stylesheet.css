@@ -20,17 +20,10 @@ border: solid thick;
 	min-width:240px;
 }
 
-#itemR{
-	width:49%;
-	height:30%;
-	float:right;
-	min-width:240px;
-}
 
 #row{
 	margin-right:5%;
 	margin-left:5%;
-	width:90%;
 	overflow:hidden;
 }
 
@@ -186,7 +179,7 @@ h1{
 
 #stat_map{
 	height: 95%;
-	width: 49%;
+	width: 100%;
 	float:left;
 }
 
