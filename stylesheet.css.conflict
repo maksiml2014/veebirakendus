@@ -1,11 +1,11 @@
-#body{
-margin-right:auto;
-margin-left:auto;
-width:100%;
-overflow: hidden;
-background-color:#6fa8dc;
-font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-border: solid thick;
+﻿#body{
+	margin-right:auto;
+	margin-left:auto;
+	width:100%;
+	overflow: hidden;
+	background-color:#6fa8dc;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	border: solid thick;
 }
 
 #header{
@@ -56,15 +56,20 @@ h1{
 }
 
 #headerleft{
-	width:80%;
+	width:50%;
 	float:left;
 	color:white;
 	font-weight:bold;
 }
 
 #headerright{
+<<<<<<< HEAD
 	margin-right:2%;
 	width:10%;
+=======
+	padding-right:2%;
+	width:30%;
+>>>>>>> 0c314af0d3c1f5d99d58e03e2bd043554565ed3a
 	float:right;
 	color:white;
 	font-size:small;
@@ -78,13 +83,7 @@ h1{
 }
 
 #map{
-	float:left;
-	margin-left:auto;
-	margin-right:auto;
-	margin-bottom:10px;
-	min-width:240px;
-	max-width:49%;
-	
+	width:100%;
 }
 
 .img{
@@ -96,8 +95,8 @@ h1{
 }
 
 .img2{
-	width:100%;
-
+	width:60%;
+	padding-left:20%;	
 }
 
 .img3{
@@ -121,7 +120,7 @@ h1{
 
 #righttab{
 	height: 100%;
-	width:48%;
+	width:49%;
 	float:right;
 	background-color:#20124d;
 	color:white;
@@ -132,9 +131,10 @@ h1{
 }
 
 #footer{
-	width:100%;
 	color:white;
 	height: 20%;
+	margin: 0;
+	padding: 0 24px;
 	border-left: solid thick;
 	border-right: solid thick;
 	border-bottom: solid thick;
@@ -145,6 +145,7 @@ h1{
 }
 
 #table-wrapper {
+<<<<<<< HEAD
 	padding-left:2%;
 	float:left;
 	margin-left:auto;
@@ -152,6 +153,11 @@ h1{
 	margin-bottom:10px;
 	min-width:240px;
 	max-width:100%;
+=======
+	margin-left:25%;
+	margin-bottom:10px;
+	width:49%;
+>>>>>>> 0c314af0d3c1f5d99d58e03e2bd043554565ed3a
 	font-size:smaller;
 	text-align:left;
 }
@@ -205,6 +211,7 @@ h1{
 	overflow:auto;
 	margin-top:20px;
 }
+
 #stat_table-wrapper table {
 	width:100%;
 }
@@ -416,4 +423,5 @@ h1{
 
 .vertical [type=radio]:checked ~ label ~ .content, .vertical [type=checkbox]:checked ~ label ~ .content {
     height:50%;
-    border:1px solid #542437;}
+    border:1px solid #542437;
+}
