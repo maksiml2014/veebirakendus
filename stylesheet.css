@@ -23,7 +23,7 @@
 
 
 #row{
-	margin-right:5%;
+	width:95%;
 	margin-left:5%;
 	overflow:hidden;
 }
@@ -262,9 +262,8 @@ h1{
 }
 
 #wrapper-new{
-	margin-left:25px;
 	margin-bottom:10px;
-	width:50%;
+	width:95%;
   	font-size:smaller;
   	text-align:left;
 }
@@ -278,14 +277,14 @@ h1{
   	color:black;
 }
 
-#wrapper-new table thead th .text {
+/*#wrapper-new table thead th .text {
   	position:absolute;  
   	top:-20px;
   	z-index:2;
   	height:20px;
   	width:35%;
   	border:1px solid red;
-}
+}*/
 
 #searchbutton{
 	padding-top:10px;
@@ -326,7 +325,7 @@ h1{
     font-size:14px;
     border:1px solid #2268a6;
     border-radius:10px;
-    width:50%;
+    width:90%;
     padding:10px;
     background:#fff;
 }
