@@ -185,7 +185,7 @@ h1{
 }
 
 #stat_map{
-	
+	;
 	width: 100%;
 	float:left;
 }
