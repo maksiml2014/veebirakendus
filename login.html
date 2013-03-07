@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html>
 	<head>
 		<title>e-valimised</title>
@@ -15,7 +15,7 @@
 				<div id="headerright">
 					<p>Oled sisenenud kui Mari Maasikas.</p>
 					<div id="searchbutton">
-						<a href="index.html"> <input type="submit" name="o" value="Välju" /></a>
+						<a href="index.html"> <input type="submit" name="o" value="VÃ¤lju" /></a>
 					</div>
 				</div>
 			</div>
@@ -30,101 +30,57 @@
 			<h1> Kandidaadid </h1>
 			<div>
 			<form>
+			<p id="search">Otsi nime jÃ¤rgi</p>
             <table id="search-bg">
             <tr>
             <td>
             <input type="search" id="search-box"/>
             </td></tr>
-            </table>          
+            </table>       
             </form>
             </div>
 			<div id="row">
     		<div id="itemL">
     			<p id="choose">Vali piirkond:</p>
-    			<div id="wrapper-new">
-    				<div id="vertscroll">
-    				<form>
-    					<table>
-    					<tbody>
-    						<tr><th>
-    						<input type="radio" name="area" value="kogueesti" checked="checked">Kogu Eesti</th></tr>
-    						<tr><th>
-    						<input type="radio" name="area" value="harju">Harju maakond</th></tr>
-    						<tr><th>
-    						<input type="radio" name="area" value="hiiu">Hiiu maakond</th></tr>
-    						<tr><th>
-    						<input type="radio" name="area" value="ida-viru">Ida-Viru maakond</th></tr>
-    						<tr><th>
-    						<input type="radio" name="area" value="jogeva">Jõgeva maakond</th></tr>
-    						<tr><th>
-    						<input type="radio" name="area" value="jarva">Järva maakond</th></tr>
-    						<tr><th>
-    						<input type="radio" name="area" value="laane">Lääne maakond</th></tr>
-    						<tr><th>
-    						<input type="radio" name="area" value="laane-viru">Lääne-Viru maakond</th></tr>
-    						<tr><th>
-    						<input type="radio" name="area" value="polva">Põlva maakond</th></tr>
-    						<tr><th>
-    						<input type="radio" name="area" value="parnu">Pärnu maakond</th></tr>
-    						<tr><th>
-    						<input type="radio" name="area" value="rapla">Rapla maakond</th></tr>
-    						<tr><th>
-    						<input type="radio" name="area" value="saare">Saare maakond</th></tr>
-    						<tr><th>
-    						<input type="radio" name="area" value="tartu">Tartu maakond</th></tr>
-    						<tr><th>
-    						<input type="radio" name="area" value="valga">Valga maakond</th></tr>
-    						<tr><th>
-    						<input type="radio" name="area" value="viljandi">Viljandi maakond</th></tr>
-    						<tr><th>
-    						<input type="radio" name="area" value="voru">Võru maakond</th></tr>	
-						</tbody>
-						</table>
-					</form>
-    				</div>
-    			</div>
+    				<select name="piirkond">
+						<option value="kogueesti">Kogu Eesti</option>
+						<option value="1">Valimisringkond nr 1 â€“ Tallinna Haabersti, PÃµhja-Tallinna ja Kristiine linnaosa</option>
+						<option value="2">Valimisringkond nr 2 â€“ Tallinna Kesklinna, LasnamÃ¤e ja Pirita linnaosa</option>
+						<option value="3">Valimisringkond nr 3 â€“ Tallinna MustamÃ¤e ja NÃµmme linnaosa</option>
+						<option value="4">Valimisringkond nr 4 â€“ Harju- (v.a Tallinn) ja Raplamaa</option>
+						<option value="5">Valimisringkond nr 5 â€“ Hiiu-, LÃ¤Ã¤ne- ja Saaremaa</option>
+						<option value="6">Valimisringkond nr 6 â€“ LÃ¤Ã¤ne-Virumaa</option>
+						<option value="7">Valimisringkond nr 7 â€“ Ida-Virumaa</option>
+						<option value="8">Valimisringkond nr 8 â€“ JÃ¤rva- ja Viljandimaa</option>
+						<option value="9">Valimisringkond nr 9 â€“ JÃµgeva- ja Tartumaa (v.a Tartu linn)</option>
+						<option value="10">Valimisringkond nr 10 â€“ Tartu linn</option>
+						<option value="11">Valimisringkond nr 11 â€“ VÃµru-, Valga- ja PÃµlvamaa</option>
+						<option value="12">Valimisringkond nr 12 â€“ PÃ¤rnumaa</option>
+					</select>	
     		</div>
     		<div id="itemL">
-    		<p id="choose">Vali erakond:</p>
-    			<div id="wrapper-new">
-    				<div id="vertscroll">
-    				<form>
-    					<table>
-    					<tbody>
-    						<tr><th>
-    						<input type="radio" name="area" value="kogueesti" checked="checked">Kõik erakonnad</th></tr>
-    						<tr><th>
-    						<input type="radio" name="area" value="harju">Eesti Iseseisvuspartei</th></tr>
-    						<tr><th>
-    						<input type="radio" name="area" value="hiiu">Eesti Keskerakond</th></tr>
-    						<tr><th>
-    						<input type="radio" name="area" value="ida-viru">Eesti Konservatiivne Rahvaerakond</th></tr>
-    						<tr><th>
-    						<input type="radio" name="area" value="jogeva">Eesti Reformierakond</th></tr>
-    						<tr><th>
-    						<input type="radio" name="area" value="jarva">Eesti Vabaduspartei – Põllumeeste Kogu</th></tr>
-    						<tr><th>
-    						<input type="radio" name="area" value="laane">Eestimaa Ühendatud Vasakpartei</th></tr>
-    						<tr><th>
-    						<input type="radio" name="area" value="laane-viru">Erakond Eesti Kristlikud Demokraadid</th></tr>
-    						<tr><th>
-    						<input type="radio" name="area" value="polva">Erakond Eestimaa Rohelised</th></tr>
-    						<tr><th>
-    						<input type="radio" name="area" value="parnu">Erakond Isamaa ja Res Publica Liit</th></tr>
-    						<tr><th>
-    						<input type="radio" name="area" value="rapla">Sotsiaaldemokraatlik Erakond</th></tr>
-    						<tr><th>
-    						<input type="radio" name="area" value="saare">Üksikkandidaat</th></tr>
-						</tbody>
-						</table>
-					</form>
-    				</div>
-    				<div id="searchbutton">
+    		    <p id="choose">Vali erakond:</p>
+    			<select name="piirkond">
+						<option value="kogueesti">Kogu Eesti</option>
+						<option value="e1">Eesti Iseseisvuspartei</option>
+						<option value="e2">Eesti Keskerakond</option>
+						<option value="e3">Eesti Konservatiivne Rahvaerakond</option>
+						<option value="e4">Eesti Reformierakond</option>
+						<option value="e5">Eesti Vabaduspartei â€“ PÃµllumeeste Kogu</option>
+						<option value="e6">Eestimaa Ãœhendatud Vasakpartei</option>
+						<option value="e7">Erakond Eesti Kristlikud Demokraadid</option>
+						<option value="e8">Erakond Eestimaa Rohelised</option>
+						<option value="e9">Erakond Isamaa ja Res Publica Liit</option>
+						<option value="e10">Sotsiaaldemokraatlik Erakond</option>
+						<option value="e11">Ãœksikandidaat</option>
+				</select>
+				<div>
+    			<div id="searchbutton">
     					<input type="submit" name="o" value="Otsi" />
-					</div>
+					</div></div>  			
     			</div>
     		</div>
-    		</div>
+    		
     <div class="accordion vertical">
     <div id="acc-scroll">
     <ul>
@@ -139,10 +95,10 @@
                 <p>.................................................................................</p>
                 <h3>Kandidaadi number: xxx</h3>
                 <div id="votebutton">
-    					<input type="submit" name="o" value="Hääleta" />
+    					<input type="submit" name="o" value="HÃ¤Ã¤leta" />
 				</div>
 				<div id="votebutton">
-    					<input type="submit" name="o" value="Tühista hääl" />
+    					<input type="submit" name="o" value="TÃ¼hista hÃ¤Ã¤l" />
 				</div>
              </div>
              <div id="pic-text">
@@ -163,10 +119,10 @@
                 <p>.................................................................................</p>
                 <h3>Kandidaadi number: xxx</h3>
                 <div id="votebutton">
-    					<input type="submit" name="o" value="Hääleta" />
+    					<input type="submit" name="o" value="HÃ¤Ã¤leta" />
 				</div>
 				<div id="votebutton">
-    					<input type="submit" name="o" value="Tühista hääl" />
+    					<input type="submit" name="o" value="TÃ¼hista hÃ¤Ã¤l" />
     			</div>
 			</div>
 			<div id="pic-text">
@@ -185,10 +141,10 @@
                 <p>.................................................................................</p>
                 <h3>Kandidaadi number: xxx</h3>
                 <div id="votebutton">
-    					<input type="submit" name="o" value="Hääleta" />
+    					<input type="submit" name="o" value="HÃ¤Ã¤leta" />
 				</div>
 				<div id="votebutton">
-    					<input type="submit" name="o" value="Tühista hääl" />
+    					<input type="submit" name="o" value="TÃ¼hista hÃ¤Ã¤l" />
 				</div>
 			</div>
 			<div id="pic-text">
@@ -207,10 +163,10 @@
                 <p>.................................................................................</p>
                 <h3>Kandidaadi number: xxx</h3>
                 <div id="votebutton">
-    					<input type="submit" name="o" value="Hääleta" />
+    					<input type="submit" name="o" value="HÃ¤Ã¤leta" />
 				</div>
 				<div id="votebutton">
-    					<input type="submit" name="o" value="Tühista hääl" />
+    					<input type="submit" name="o" value="TÃ¼hista hÃ¤Ã¤l" />
 				</div>
 			</div>
 			<div id="pic-text">
@@ -229,10 +185,10 @@
                 <p>.................................................................................</p>
                 <h3>Kandidaadi number: xxx</h3>
                 <div id="votebutton">
-    					<input type="submit" name="o" value="Hääleta" />
+    					<input type="submit" name="o" value="HÃ¤Ã¤leta" />
 				</div>
 				<div id="votebutton">
-    					<input type="submit" name="o" value="Tühista hääl" />
+    					<input type="submit" name="o" value="TÃ¼hista hÃ¤Ã¤l" />
 				</div>
 				</div>
 			<div id="pic-text">
@@ -251,10 +207,10 @@
                 <p>.................................................................................</p>
                 <h3>Kandidaadi number: xxx</h3>
                 <div id="votebutton">
-    					<input type="submit" name="o" value="Hääleta" />
+    					<input type="submit" name="o" value="HÃ¤Ã¤leta" />
 				</div>
 				<div id="votebutton">
-    					<input type="submit" name="o" value="Tühista hääl" />
+    					<input type="submit" name="o" value="TÃ¼hista hÃ¤Ã¤l" />
 				</div>
 				</div>
 			<div id="pic-text">
@@ -273,10 +229,10 @@
                 <p>.................................................................................</p>
                 <h3>Kandidaadi number: xxx</h3>
                 <div id="votebutton">
-    					<input type="submit" name="o" value="Hääleta" />
+    					<input type="submit" name="o" value="HÃ¤Ã¤leta" />
 				</div>
 				<div id="votebutton">
-    					<input type="submit" name="o" value="Tühista hääl" />
+    					<input type="submit" name="o" value="TÃ¼hista hÃ¤Ã¤l" />
 				</div>
 				</div>
 			<div id="pic-text">
@@ -299,7 +255,7 @@
 		<div id="footer">
 			Autorid: Heike Randlahe, Karl Peedosk, Maksim Lind <br>
 			Veebirakenduste loomine <br>
-			Tartu Ülikool <br>
+			Tartu Ãœlikool <br>
 			Veebruar 2013
 			
 		</div>
