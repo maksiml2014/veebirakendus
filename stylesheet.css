@@ -440,7 +440,7 @@ a:active {color:white; text-decoration:none;}  /* selected link */
 	padding:7px 10px;
 	display:block;
 	float:left;
-	width:48%;
+	width:23%;
 	height:100%;
 	background-color:#20124d;
 	color:white;
@@ -449,6 +449,7 @@ a:active {color:white; text-decoration:none;}  /* selected link */
 	border-color:black;
 	border-radius:10px;
 }
+
 
 
 .tabscontent {
@@ -466,4 +467,12 @@ a:active {color:white; text-decoration:none;}  /* selected link */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(90%,#FFFFFF), color-stop(100%,#e4e9ed)); /* webkit */
 	margin:0;
 	color:#333;
+}
+
+.tabs > ul > li.tabActiveHeader{
+	background: #FFFFFF; /* old browsers */
+	background: -moz-linear-gradient(top, #FFFFFF 0%, #F3F3F3 10%, #F3F3F3 50%, #FFFFFF 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(10%,#F3F3F3), color-stop(50%,#F3F3F3), color-stop(100%,#FFFFFF)); /* webkit */
+	cursor:pointer;
+	color: #333;
 }

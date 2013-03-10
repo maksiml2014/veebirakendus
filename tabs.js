@@ -32,6 +32,7 @@ function displayPage() {
 
   var ident = this.id.split("_")[1];
   //add class of activetabheader to new active tab and show contents
+  this.setAttribute("class","tabActiveHeader");
   document.getElementById("tabpage_" + ident).style.display="block";
   this.parentNode.setAttribute("data-current",ident);
 }
