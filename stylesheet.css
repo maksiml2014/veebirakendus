@@ -8,6 +8,9 @@
 	border: solid thick;
 }
 
+h6{
+	display:none;
+}
 
 #header{
 	width:100%;
