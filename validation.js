@@ -15,7 +15,7 @@ function is_selected(rb_group,lbl_info){
 }
 function validation(){
 	var error=0;
-	error+=is_selected("area","area_info");
+	error+=is_selected("ringkond","ringkond_info");
 	error+=is_selected("partei","partei_info");
 	if(error>0){
 		alert("Palun täitke kõik punasega tähistatud väljad!");
