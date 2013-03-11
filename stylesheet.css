@@ -478,7 +478,13 @@ a:active {color:white; text-decoration:none;}  /* selected link */
 * {
 	margin:0;
 	padding:0;
+	cursor:auto;
 }
+
+#load{
+	cursor:auto;
+}
+
 #area_info{
 	color:#FFFFFF;
 	font-size:medium;
