@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>e-valimised</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="sorttable.js"></script>
+		<script src="validation.js"></script>
+		<script src="tabs.js"></script>
+		<script src="loading.js"></script>
+		<script src="search.js"></script>
+		<link href="stylesheet.css" rel="stylesheet" media="screen">
+		<link href="print.css" rel="stylesheet" media="print">
+	</head>
+	<body>
+		<div id="body">
+			<div id="headerbig">
+				<div id="headerleft">
+					<img class="img" alt="" src="http://uuseesti.ee/wp-content/uploads/2011/03/Valimised2011Logo1.jpg">
+					<h1>e-valimised</h1>
+				</div>
+				<div id="headerright">
+					<img class="img3" alt="" src="fb.png">
+				</div>
+			</div>
+			<div id="tabContainer">
+				<div class="tabs">
+					<ul>
+						<li id="tabHeader_1">Kodu</li>
+						<li id="tabHeader_2">Statistika</li>
+						<li id="tabHeader_3">Kandidaadid</li>
+						<li id="tabHeader_4">Lisa kandidaadiks </li>
+					</ul>
+				</div>
+				<div>
+					<div class="tabpage" id="tabpage_1">
+						<h1> Info </h1>
+						<div id="textbox">
+							Kuidas ja kuna haaletada voi end kandidaadiks lisada
+							<br>
+							<br>
+							<br>
+						</div>
+						<h1>Valimiste hetkeseis</h1>
+						<div id="map">
+							<img class="img2" alt="" src="map.png">
+						</div>
+						<div id="table-wrapper">
+							<div id="table-scroll">
+								<table class="sortable">
+									<!--<thead>-->
+									<!--	<tr>-->
+									<!--	<th><span class="text">A</span></th>-->
+									<!--<th><span class="text">B</span></th>-->
+									<!--<th><span class="text">C</span></th>-->
+									<!--</tr>-->
+									<!--</thead>-->
+									<thead><tr><th>Erakond</th><th>% häältest</th><th> Hääli</th></tr></thead>
+									<tbody>
+										<tr><td>Eesti Iseseisvuspartei</td><td>41</td><td>1763</td></tr>
+										<tr><td>Eesti Keskerakond</td><td>21</td><td>742</td></tr>
+										<tr><td>Eesti Konservatiivne Rahvaerakond</td><td>20</td><td>710</td></tr>
+										<tr><td>Eesti Reformierakond</td><td>14</td><td>440</td></tr>
+										<tr><td>Eesti Vabaduspartei – Põllumeeste Kogu</td><td>24</td><td>34</td></tr>
+										<tr><td>Eestimaa Ühendatud Vasakpartei</td><td>25</td><td>35</td></tr>
+										<tr><td>Erakond Eesti Kristlikud Demokraadid</td><td>26</td><td>36</td></tr>
+										<tr><td>Erakond Eestimaa Rohelised</td><td>27</td><td>37</td></tr>
+										<tr><td>Erakond Isamaa ja Res Publica Liit</td><td>28</td><td>38</td></tr>
+										<tr><td>Sotsiaaldemokraatlik Erakond</td><td>29</td><td>39</td></tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="tabpage" id="tabpage_2">
+						<h1> Statistika </h1>
+						<div id="row">
+							<div id="itemL">
+								<div id="map">
+									<div id="tabs">
+										<div id="lefttab">
+											Kes võidab
+										</div>
+										<div id="righttab">
+											Palju hääletas
+										</div>
+										<img class="stat_map" alt="" src="map.png"/>
+									</div>
+								</div>
+							</div>
+							<div id="itemL">
+								<h1>Maakond</h1>
+								<div id="stat_table-wrapper">
+									<div id="vertscroll">
+										<table class="sortable">
+											<thead><tr><th>Partei</th> <th> % häältest</th> <th>Hääli</th></tr></thead>								
+											<tbody>
+												<tr><td>Eesti Iseseisvuspartei</td><td>41</td><td>1763</td></tr>
+												<tr><td>Eesti Keskerakond</td><td>21</td><td>742</td></tr>
+												<tr><td>Eesti Konservatiivne Rahvaerakond</td><td>20</td><td>710</td></tr>
+												<tr><td>Eesti Reformierakond</td><td>14</td><td>440</td></tr>
+												<tr><td>Eesti Vabaduspartei – Põllumeeste Kogu</td><td>24</td><td>34</td></tr>
+												<tr><td>Eestimaa Ühendatud Vasakpartei</td><td>25</td><td>35</td></tr>
+												<tr><td>Erakond Eesti Kristlikud Demokraadid</td><td>26</td><td>36</td></tr>
+												<tr><td>Erakond Eestimaa Rohelised</td><td>27</td><td>37</td></tr>
+												<tr><td>Erakond Isamaa ja Res Publica Liit</td><td>28</td><td>38</td></tr>
+												<tr><td>Sotsiaaldemokraatlik Erakond</td><td>29</td><td>39</td></tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="row">
+							<div id="itemL">
+								<div id="radiobuttons">
+									<div id="vertscroll">
+										<form>
+											<table>
+												<tbody>
+													<tr><th><input id="load" onclick="waiter()" type="radio" name="area" value="kogueesti" checked="checked">Kõik erakonnad</th></tr>
+													<tr><th><input id="load" onclick="waiter()" type="radio" name="area" value="harju">Eesti Iseseisvuspartei</th></tr>
+													<tr><th><input id="load" onclick="waiter()" type="radio" name="area" value="hiiu">Eesti Keskerakond</th></tr>
+													<tr><th><input id="load" onclick="waiter()" type="radio" name="area" value="ida-viru">Eesti Konservatiivne Rahvaerakond</th></tr>
+													<tr><th><input id="load" onclick="waiter()" type="radio" name="area" value="jogeva">Eesti Reformierakond</th></tr>
+													<tr><th><input id="load" onclick="waiter()" type="radio" name="area" value="jarva">Eesti Vabaduspartei – Põllumeeste Kogu</th></tr>
+													<tr><th><input id="load" onclick="waiter()" type="radio" name="area" value="laane">Eestimaa Ühendatud Vasakpartei</th></tr>
+													<tr><th><input id="load" onclick="waiter()" type="radio" name="area" value="laane-viru">Erakond Eesti Kristlikud Demokraadid</th></tr>
+													<tr><th><input id="load" onclick="waiter()" type="radio" name="area" value="polva">Erakond Eestimaa Rohelised</th></tr>
+													<tr><th><input id="load" onclick="waiter()" type="radio" name="area" value="parnu">Erakond Isamaa ja Res Publica Liit</th></tr>
+													<tr><th><input id="load" onclick="waiter()" type="radio" name="area" value="rapla">Sotsiaaldemokraatlik Erakond</th></tr>
+													<tr><th><input id="load" onclick="waiter()" type="radio" name="area" value="saare">Üksikkandidaat</th></tr>
+												</tbody>
+											</table>
+										</form>
+							     	</div>
+								</div>
+							</div>
+							<div id="itemL">
+								<h6>Erakond</h6>
+								<div id="stat_table-wrapper">
+									<div id="vertscroll">
+										<table class="sortable">
+											<thead><tr><th>Kandidaat</th><th>Hääli</th></tr></thead>	
+											<tbody>	
+												<tr><td>Edgar Savisaar</td><td>1764</td></tr>
+												<tr><td>Andrus Ansip</td><td>742</td></tr>
+												<tr><td>Uuno Nisu</td><td>710</td></tr>
+												<tr><td>Mart Laar</td><td>440</td></tr>
+												<tr><td>Zorro</td><td>4</td></tr>
+												<tr><td>Sven Mikser</td><td>35</td></tr>
+												<tr><td>Aadu Must</td><td>36</td></tr>
+												<tr><td>Taavi Aas</td><td>37</td></tr>
+												<tr><td>Juhan Ainson</td><td>38</td></tr>
+												<tr><td>Andres Dido</td><td>39</td></tr>
+												<tr><td>Ivi Eenmaa</td><td>310</td></tr>
+												<tr><td>August Hansen</td><td>311</td></tr>
+												<tr><td>Jaan Järve</td><td>312</td></tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tabpage" id="tabpage_3">
+						<h1> Kandidaadid </h1>
+						<div>
+							<form>
+								<p id="search">Otsi nime järgi</p>
+								<table id="search-bg">
+									<tr><td><input type="search" id="search-box"/></td></tr>
+								</table>       
+							</form>
+						</div>
+						<div id="row">
+							<div id="itemL">
+								<p id="choose">Vali piirkond:</p>
+								<select name="piirkond">
+									<option value="kogueesti">Kogu Eesti</option>
+									<option value="1">Valimisringkond nr 1 – Tallinna Haabersti, Põhja-Tallinna ja Kristiine linnaosa</option>
+									<option value="2">Valimisringkond nr 2 – Tallinna Kesklinna, Lasnamäe ja Pirita linnaosa</option>
+									<option value="3">Valimisringkond nr 3 – Tallinna Mustamäe ja Nõmme linnaosa</option>
+									<option value="4">Valimisringkond nr 4 – Harju- (v.a Tallinn) ja Raplamaa</option>
+									<option value="5">Valimisringkond nr 5 – Hiiu-, Lääne- ja Saaremaa</option>
+									<option value="6">Valimisringkond nr 6 – Lääne-Virumaa</option>
+									<option value="7">Valimisringkond nr 7 – Ida-Virumaa</option>
+									<option value="8">Valimisringkond nr 8 – Järva- ja Viljandimaa</option>
+									<option value="9">Valimisringkond nr 9 – Jõgeva- ja Tartumaa (v.a Tartu linn)</option>
+									<option value="10">Valimisringkond nr 10 – Tartu linn</option>
+									<option value="11">Valimisringkond nr 11 – Võru-, Valga- ja Põlvamaa</option>
+									<option value="12">Valimisringkond nr 12 – Pärnumaa</option>
+								</select>	
+							</div>
+							<div id="itemL">
+								<p id="choose">Vali erakond:</p>
+								<select name="piirkond">
+									<option value="kogueesti">Kogu Eesti</option>
+									<option value="e1">Eesti Iseseisvuspartei</option>
+									<option value="e2">Eesti Keskerakond</option>
+									<option value="e3">Eesti Konservatiivne Rahvaerakond</option>
+									<option value="e4">Eesti Reformierakond</option>
+									<option value="e5">Eesti Vabaduspartei – Põllumeeste Kogu</option>
+									<option value="e6">Eestimaa Ühendatud Vasakpartei</option>
+									<option value="e7">Erakond Eesti Kristlikud Demokraadid</option>
+									<option value="e8">Erakond Eestimaa Rohelised</option>
+									<option value="e9">Erakond Isamaa ja Res Publica Liit</option>
+									<option value="e10">Sotsiaaldemokraatlik Erakond</option>
+									<option value="e11">Üksikandidaat</option>
+								</select>
+								<div>
+									<div id="searchbutton">
+										<input type="submit" name="o" value="Otsi" />
+									</div>
+								</div>  			
+							</div>
+						</div>
+						<div class="accordion vertical">
+							<div id="acc-scroll">
+								<ul>
+							    	<li>
+							        	<input type="radio" id="radio-1" name="radio-accordion" checked="checked" />
+							            <label for="radio-1">Edgar Savisaar</label>
+							            <div class="content">
+								        	<div id="itemL">
+								                <h3>Isiklik info</h3>
+								                <p>.................................................................................</p>
+												<h3>Valimislubadused</h3>
+												<p>.................................................................................</p>
+												<h3>Kandidaadi number: xxx</h3>
+												<div id="votebutton">
+													<input type="submit" name="o" value="Hääleta" />
+												</div>
+												<div id="votebutton">
+													<input type="submit" name="o" value="Tühista hääl" />
+												</div>
+											</div>
+											<div id="pic-text">
+												<img height="148" width="131" id="pic-text" alt="Edgar Savisaar" src="savisaar.png">
+											</div>
+										</div>
+									</li>
+									<li>
+										<input type="radio" id="radio-2" name="radio-accordion" />
+										<label for="radio-2">Andrus Ansip</label>
+										<div class="content">
+											<div id="itemL">
+												<h3>Isiklik info</h3>
+												<p>.................................................................................</p>
+												<h3>Valimislubadused</h3>
+												<p>.................................................................................</p>
+												<h3>Kandidaadi number: xxx</h3>
+												<div id="votebutton">
+													<input type="submit" name="o" value="Hääleta" />
+												</div>
+												<div id="votebutton">
+													<input type="submit" name="o" value="Tühista hääl" />
+												</div>
+											</div>
+											<div id="pic-text">
+												<img height="165" width="121" id="pic-text" alt="Andrus Ansip" src="ansip.png">   
+											</div>
+										</div>
+									</li>
+									<li>
+										<input type="radio" id="radio-3" name="radio-accordion" />
+										<label for="radio-3">Mart Laar</label>
+										<div class="content">
+											<div id="itemL">
+												<h3>Isiklik info</h3>
+												<p>.................................................................................</p>
+												<h3>Valimislubadused</h3>
+												<p>.................................................................................</p>
+												<h3>Kandidaadi number: xxx</h3>
+												<div id="votebutton">
+    												<input type="submit" name="o" value="Hääleta" />
+												</div>
+												<div id="votebutton">
+													<input type="submit" name="o" value="Tühista hääl" />
+												</div>
+											</div>
+											<div id="pic-text">
+												<img height="146" width="150" id="pic-text" alt="Mart Laar" src="laar.png">   
+											</div>
+										</div>
+									</li>
+									<li>
+										<input type="radio" id="radio-4" name="radio-accordion" />
+										<label for="radio-4">Sven Mikser</label>
+										<div class="content">
+											<div id="itemL">
+												<h3>Isiklik info</h3>
+												<p>.................................................................................</p>
+												<h3>Valimislubadused</h3>
+												<p>.................................................................................</p>
+												<h3>Kandidaadi number: xxx</h3>
+												<div id="votebutton">
+													<input type="submit" name="o" value="Hääleta" />
+												</div>
+												<div id="votebutton">
+													<input type="submit" name="o" value="Tühista hääl" />
+												</div>
+											</div>
+											<div id="pic-text">
+												<img height="160" width="108" id="pic-text" alt="Sven Mikser" src="mikser.png">   
+											</div>
+										</div>
+									</li>
+									<li>
+										<input type="radio" id="radio-5" name="radio-accordion" />
+										<label for="radio-5">Aleksei Lotman</label>
+										<div class="content">
+											<div id="itemL">
+												<h3>Isiklik info</h3>
+												<p>.................................................................................</p>
+												<h3>Valimislubadused</h3>
+												<p>.................................................................................</p>
+												<h3>Kandidaadi number: xxx</h3>
+												<div id="votebutton">
+													<input type="submit" name="o" value="Hääleta" />
+												</div>
+												<div id="votebutton">
+													<input type="submit" name="o" value="Tühista hääl" />
+												</div>
+											</div>
+											<div id="pic-text">
+												<img height="120" width="118" id="pic-text" alt="Aleksei Lotman" src="lotman.png">   
+											</div>
+										</div>
+									</li>
+									<li>
+										<input type="radio" id="radio-6" name="radio-accordion" />
+										<label for="radio-6">Ero Liivik</label>
+										<div class="content">
+											<div id="itemL">
+												<h3>Isiklik info</h3>
+												<p>.................................................................................</p>
+												<h3>Valimislubadused</h3>
+												<p>.................................................................................</p>
+												<h3>Kandidaadi number: xxx</h3>
+												<div id="votebutton">
+													<input type="submit" name="o" value="Hääleta" />
+												</div>
+												<div id="votebutton">
+    												<input type="submit" name="o" value="Tühista hääl" />
+												</div>
+											</div>
+											<div id="pic-text">
+	        	   	 						    <img height="151" width="114" id="pic-text" alt="Ero Liivik" src="liivik.png">   
+											</div>
+										</div>
+						        	</li>
+									<li>
+										<input type="radio" id="radio-7" name="radio-accordion" />
+										<label for="radio-7">Uuno Nisu</label>
+										<div class="content">
+											<div id="itemL">
+												<h3>Isiklik info</h3>
+												<p>.................................................................................</p>
+												<h3>Valimislubadused</h3>
+												<p>.................................................................................</p>
+												<h3>Kandidaadi number: xxx</h3>
+												<div id="votebutton">
+													<input type="submit" name="o" value="Hääleta" />
+												</div>
+												<div id="votebutton">
+						    						<input type="submit" name="o" value="Tühista hääl" />
+												</div>
+											</div>
+											<div id="pic-text">
+								                <img height="151" width="114" id="pic-text" alt="Uuno Nisu" src="images.jpg">   
+								            </div>
+										</div>
+						    	    </li>
+						    	</ul>
+					    	</div>
+						</div>
+					</div>
+	        		<div class="tabpage" id="tabpage_4">
+		    	    	<h1> Lisa end kandidaadiks </h1>
+						<div id="row">
+							<div id="itemL">
+								<p id="choose">Vali piirkond:</p>
+								<div id="wrapper-new">
+									<div id="vertscroll">
+										<form> 
+											<table>
+												<tbody>
+													<tr><td><p id="area_info">
+														<label><input type="radio" name="area" onChange="JavaScript:select_radio_button('area_info');" value="1" id="area_0">Valimisringkond nr 1 – Tallinna Haabersti, Põhja-Tallinna ja Kristiine linnaosa </label><br>     								
+														<label><input type="radio" name="area" onChange="JavaScript:select_radio_button('area_info');" value="2" id="area_1">Valimisringkond nr 2 – Tallinna Kesklinna, Lasnamäe ja Pirita linnaosa</label><br>
+														<label><input type="radio" name="area" onChange="JavaScript:select_radio_button('area_info');" value="3" id="area_2">Valimisringkond nr 3 – Tallinna Mustamäe ja Nõmme linnaosa</label><br>
+														<label><input type="radio" name="area" onChange="JavaScript:select_radio_button('area_info');" value="4" id="area_3">Valimisringkond nr 4 – Harju- (v.a Tallinn) ja Raplamaa</label><br>
+														<label><input type="radio" name="area" onChange="JavaScript:select_radio_button('area_info');" value="5" id="area_4">Valimisringkond nr 5 – Hiiu-, Lääne- ja Saaremaa</label><br>
+														<label><input type="radio" name="area" onChange="JavaScript:select_radio_button('area_info');" value="6" id="area_5">Valimisringkond nr 6 – Lääne-Virumaa</label><br>
+														<label><input type="radio" name="area" onChange="JavaScript:select_radio_button('area_info');" value="7" id="area_6">Valimisringkond nr 7 – Ida-Virumaa</label><br>
+														<label><input type="radio" name="area" onChange="JavaScript:select_radio_button('area_info');" value="8" id="area_7">Valimisringkond nr 8 – Järva- ja Viljandimaa</label><br>
+														<label><input type="radio" name="area" onChange="JavaScript:select_radio_button('area_info');" value="9" id="area_8">Valimisringkond nr 9 – Jõgeva- ja Tartumaa (v.a Tartu linn)</label><br>
+														<label><input type="radio" name="area" onChange="JavaScript:select_radio_button('area_info');" value="10" id="area_9">Valimisringkond nr 10 – Tartu linn</label><br>
+														<label><input type="radio" name="area" onChange="JavaScript:select_radio_button('area_info');" value="11" id="area_10">Valimisringkond nr 11 – Võru-, Valga- ja Põlvamaa</label><br>
+														<label><input type="radio" name="area" onChange="JavaScript:select_radio_button('area_info');" value="12" id="area_11">Valimisringkond nr 12 – Pärnumaa</label><br>	
+													</td></tr>
+												</tbody>
+											</table>
+										</form>
+									</div>
+								</div>
+							</div>
+							<div id="itemL">
+								<p id="choose">Vali erakond:</p>
+								<div id="wrapper-new">
+									<div id="vertscroll">
+										<form>
+											<table>
+												<tbody>
+													<tr><td><p id="partei_info">
+														<label><input type="radio" name="partei" onChange="JavaScript:select_radio_button('partei_info');" value="1" id="partei_0">Eesti Iseseisvuspartei</label><br>
+														<label><input type="radio" name="partei" onChange="JavaScript:select_radio_button('partei_info');" value="2" id="partei_1">Eesti Keskerakond</label><br>
+														<label><input type="radio" name="partei" onChange="JavaScript:select_radio_button('partei_info');" value="3" id="partei_2">Eesti Konservatiivne Rahvaerakond</label><br>     								
+														<label><input type="radio" name="partei" onChange="JavaScript:select_radio_button('partei_info');" value="4" id="partei_3">Eesti Reformierakond</label><br>
+														<label><input type="radio" name="partei" onChange="JavaScript:select_radio_button('partei_info');" value="5" id="partei_4">Eesti Vabaduspartei – Põllumeeste Kogu</label><br>
+														<label><input type="radio" name="partei" onChange="JavaScript:select_radio_button('partei_info');" value="6" id="partei_5">Eestimaa Ühendatud Vasakpartei</label><br>
+														<label><input type="radio" name="partei" onChange="JavaScript:select_radio_button('partei_info');" value="7" id="partei_6">Erakond Eesti Kristlikud Demokraadid</label><br>
+														<label><input type="radio" name="partei" onChange="JavaScript:select_radio_button('partei_info');" value="8" id="partei_7">Erakond Eestimaa Rohelised</label><br>
+														<label><input type="radio" name="partei" onChange="JavaScript:select_radio_button('partei_info');" value="9" id="partei_8">Erakond Isamaa ja Res Publica Liit</label><br>
+														<label><input type="radio" name="partei" onChange="JavaScript:select_radio_button('partei_info');" value="10" id="partei_9">Sotsiaaldemokraatlik Erakond</label><br>
+														<label><input type="radio" name="partei" onChange="JavaScript:select_radio_button('partei_info');" value="11" id="partei_10">Üksikkandidaat</label><br>
+													</td></tr>
+												</tbody>
+											</table>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="row">
+							<div id="itemL">
+								<p id="choose"> Lühikirjeldus: </p>
+								<textarea id="textarea"></textarea>
+								<div id="addbutton">
+									<input type="submit" name="o" value="Lisa ennast kandidaadiks" onclick="return validation();" />
+								</div>					
+							</div>
+							<div id="itemL">
+								<p id="choose"> Lisa pilt:</p>
+								<div>
+									<form>
+										<table id="search-bg">
+											<tr><td>
+												<input type="file" id="search-box" name="browse"/>
+												<input type="submit" name="lisa" value="Lisa"/>
+											</td></tr>
+										</table>          
+									</form>
+								</div>
+							</div>
+						</div>
+    				</div>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			Autorid: Heike Randlahe, Karl Peedosk, Maksim Lind <br/>
+			Veebirakanduste loomine <br/>
+			Tartu Ülikool <br/>
+			Veebruar 2013
+		</div>
+	</body>
+</html>
