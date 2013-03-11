@@ -8,6 +8,9 @@
 	border: solid thick;
 }
 
+h6{
+	display:none;
+}
 
 #header{
 	width:100%;
@@ -40,7 +43,6 @@ h1{
 	padding-left:2%;
 	color:white;
 	font-size:xx-large;	
-	
 }
 
 #textbox{
@@ -81,7 +83,6 @@ h1{
 
 .tabs{
 	float:left;
-	height: 5%;
 	width:100%;
 	font-size:large;
 }
@@ -418,7 +419,7 @@ h1{
     border:1px solid #542437;}
 
 #vertscroll {
-	height:150px;
+	height:250px;
 	overflow:auto;
 	margin-top:20px;
 }
@@ -436,19 +437,18 @@ a:active {color:white; text-decoration:none;}  /* selected link */
 }
 
 .tabs > ul > li{
-	margin:0 2px 0 0;
+	margin:1px 1px 1px 1px;
 	padding:7px 10px;
-	display:block;
+	
 	float:left;
-	width:48%;
-	height:100%;
+	width:23%;
 	background-color:#20124d;
 	color:white;
 	text-align:center;
 	border:solid thin;
 	border-color:black;
-	border-radius:10px;
 }
+
 
 
 .tabscontent {
@@ -467,9 +467,16 @@ a:active {color:white; text-decoration:none;}  /* selected link */
 	margin:0;
 	color:#333;
 }
-.normal_p{
-color:#FFFFFF;
+
+.tabs > ul > li.tabActiveHeader{
+	background: #FFFFFF; /* old browsers */
+	background: -moz-linear-gradient(top, #FFFFFF 0%, #F3F3F3 10%, #F3F3F3 50%, #FFFFFF 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(10%,#F3F3F3), color-stop(50%,#F3F3F3), color-stop(100%,#FFFFFF)); /* webkit */
+	cursor:pointer;
+	color: #333;
 }
-.error_p{
-color:#F00;
+* {
+	margin:0;
+	padding:0;
 }
+
