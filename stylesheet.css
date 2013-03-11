@@ -479,4 +479,17 @@ a:active {color:white; text-decoration:none;}  /* selected link */
 	margin:0;
 	padding:0;
 }
-
+#area_info{
+	color:#FFFFFF;
+	font-size:medium;
+	font-weight:bolder;
+	text-align:left;
+	padding-bottom:1%;
+}
+#partei_info{
+	color:#FFFFFF;
+	font-size:medium;
+	font-weight:bolder;
+	text-align:left;
+	padding-bottom:1%;
+}

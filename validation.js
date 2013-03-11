@@ -1,16 +1,16 @@
 ﻿function select_radio_button(group_p){
-	document.getElementById(group_p).className='normal_p';
+	document.getElementById(group_p).style.color='white';
 }
 
 function is_selected(rb_group,lbl_info){
-	var radio_group =document.getElementsByName(rb_group);
+	var radio_group = document.getElementsByName(rb_group);
 	for(var x=0;x<radio_group.length;x++){
 		if(radio_group[x].checked){
-			document.getElementById(lbl_info).className='normal_p';
+			document.getElementById(lbl_info).style.color='white';
 			return 0;
 		}
 	}
-	document.getElementById(lbl_info).className='error_p';
+	document.getElementById(lbl_info).style.color='red';
 	return 1;
 }
 function validation(){
@@ -18,7 +18,7 @@ function validation(){
 	error+=is_selected("area","area_info");
 	error+=is_selected("partei","partei_info");
 	if(error>0){
-		alert("Palun täitke kõik vajalikud väljad!");
+		alert("Palun täitke kõik punasega tähistatud väljad!");
 		return false;
 	}
 	else{
