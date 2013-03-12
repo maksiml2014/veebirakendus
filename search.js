@@ -62,7 +62,7 @@ function getForm(form) {
 							jQuery(div).empty()
 							div.append(jQuery("<p><br> Kandidaat leitud: </p><br />"));
 							//alert(val.person.name)
-							found.append(jQuery("<tr><td>" + val.person.name + '</td><td> ' + val.party.name + '</tr></td>'));
+							found.append(jQuery("<tr><td>" + val.person.name + '</td><td> ' + val.party.name + '</td></tr>'));
 						}
 					});
 				}
@@ -71,14 +71,19 @@ function getForm(form) {
 		
 	}
 	else if (partei !=100 && name=="" && piirkond==0){
-		jQuery('#scriptinput').empty();
+		jQuery(tablehead).empty();
+		jQuery(found).empty();
+		
+		tablehead.append(jQuery("<th>Kandidaat</th><th>Piirkond</th>"));
 		jQuery.getJSON("findCandidatesByParty.json", function(result){
 			jQuery.each(result, function(index, item){
 				if (index != "id"){
 					jQuery.each(item, function(key, val){
+						jQuery(div).empty()
+						div.append(jQuery("<p><br> Kandidaat leitud: </p><br />"));
 						if (key !="id"){
 							//alert(val.person.name)
-							obj.append(jQuery("<p><br>" + val.person.name + ' ' + val.region.name + '<br /></p>'));
+							found.append(jQuery("<tr><td>" + val.person.name + '</td><td> ' + val.region.name + '</td></tr>'));
 						}
 					});
 				}
