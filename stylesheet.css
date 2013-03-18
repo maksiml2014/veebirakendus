@@ -45,6 +45,12 @@ h1{
 	font-size:xx-large;	
 }
 
+#hoiatus{
+	padding-left:2%;
+	color:#FF0000;
+	font-weight:bold;
+}
+
 #textbox{
 	margin-left:2%;
 	margin-right:2%;
