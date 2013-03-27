@@ -123,33 +123,9 @@ h1{
 	margin-right:auto;
 }
 
-#lefttab{
-	height:100%;
-	width:49%;
-	float:left;
-	background-color:#20124d;
-	color:white;
-	text-align:center;
-	border:solid thin;
-	border-color:black;
-	border-radius:10px;
-}
-
-
-#righttab{
-	height: 100%;
-	width:48%;
-	float:right;
-	background-color:#20124d;
-	color:white;
-	border:solid thin;
-	border-color:black;
-	border-radius:10px;
-	text-align:center;
-}
 
 #footer{
-	width:100%;
+	width:99%;
 	color:white;
 	height: 20%;
 	border-left: solid thick;

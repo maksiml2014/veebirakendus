@@ -1,38 +1,79 @@
-window.onload=function() {
+﻿
+    
+            var tabs,
+                tabEvent = false,
+                initialTab = 'Overview',
+                navSelector = '#tabs .ui-tabs-nav',
+                navFilter = function(el) {
+                    return $(el).attr('href').replace(/^#/, '');
+                },
+                panelSelector = '#tabs .ui-tabs-panel',
+                panelFilter = function() {
+                    $(panelSelector + ' a').filter(function() {
+                        return $(navSelector + ' a[title=' + $(this).attr('title') + ']').size() != 0;
+                    }).each(function(event) {
+                        $(this).attr('href', '#' + $(this).attr('title').replace(/ /g, '_'));
+                    });
+                };
+            
+            // Initializes plugin features
+            $.address.strict(false).wrap(true);
+            
+            if ($.address.value() == '') {
+                $.address.history(false).value(initialTab).history(true);
+            }
+            
+            // Address handler
+            $.address.init(function(event) {
 
-  // get tab container
-  var container = document.getElementById("tabContainer");
-    // set current tab
-    var navitem = container.querySelector(".tabs ul li");
-    //store which tab we are on
-    var ident = navitem.id.split("_")[1];
-    navitem.parentNode.setAttribute("data-current",ident);
-    //set current tab with class of activetabheader
-    navitem.setAttribute("class","tabActiveHeader");
+                // Adds the ID in a lazy manner to prevent scrolling
+                $(panelSelector).attr('id', initialTab);
 
-    //hide two tab contents we don't need
-    var pages = container.querySelectorAll(".tabpage");
-    for (var i = 1; i < pages.length; i++) {
-      pages[i].style.display="none";
-    }
+                // Enables the plugin for all the content links
+                $(panelSelector + ' a').address(function() {
+                    return navFilter(this);
+                });
+                
+                panelFilter();
 
-    //this adds click event to tabs
-    var tabs = container.querySelectorAll(".tabs ul li");
-    for (var i = 0; i < tabs.length; i++) {
-      tabs[i].onclick=displayPage;
-    }
-}
+                // Tabs setup
+                tabs = $('#tabs')
+                    .tabs({
+                        load: function(event, ui) {
+                            // Filters the content and applies the plugin if needed
+                            $(ui.panel).html($(panelSelector, ui.panel).html());
+                            panelFilter();
+                        },
+                        fx: {
+                            opacity: 'toggle', 
+                            duration: 'fast'
+                        }
+                    })
+                    .css('display', 'block');
 
-// on click of one of tabs
-function displayPage() {
-  var current = this.parentNode.getAttribute("data-current");
-  //remove class of activetabheader and hide old contents
-  document.getElementById("tabHeader_" + current).removeAttribute("class");
-  document.getElementById("tabpage_" + current).style.display="none";
+                // Enables the plugin for all the tabs
+                $(navSelector + ' a').click(function(event) {
+                	tabEvent = true;
+                    $.address.value(navFilter(event.target));
+                    tabEvent = false;
+                    return false;
+                });
+            
+            }).change(function(event) {
 
-  var ident = this.id.split("_")[1];
-  //add class of activetabheader to new active tab and show contents
-  this.setAttribute("class","tabActiveHeader");
-  document.getElementById("tabpage_" + ident).style.display="block";
-  this.parentNode.setAttribute("data-current",ident);
-}
+                var current = $('a[href=#' + event.value + ']:first');
+                
+                // Sets the page title
+                $.address.title($.address.title().split(' | ')[0] + ' | ' + current.text());
+
+                // Selects the proper tab
+                if (!tabEvent) {
+                    tabs.tabs('select', current.attr('href'));
+                }
+                
+            });
+
+            // Hides the tabs during initialization
+            document.write('<style type="text/css"> #tabs { display: none; } </style>');
+            
+        
