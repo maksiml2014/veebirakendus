@@ -2,7 +2,7 @@
     
             var tabs,
                 tabEvent = false,
-                initialTab = 'Overview',
+                initialTab = 'Home',
                 navSelector = '#tabs .ui-tabs-nav',
                 navFilter = function(el) {
                     return $(el).attr('href').replace(/^#/, '');

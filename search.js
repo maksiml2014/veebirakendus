@@ -92,6 +92,34 @@ function getForm(form) {
 		
 	}
 	
+	
+
+	else if (partei ==100 && name=="" && piirkond==0){
+		jQuery(tablehead).empty();
+		jQuery(found).empty();
+		jQuery(div).empty()
+		
+		tablehead.append(jQuery("<th>Kandidaat</th><th>Piirkond</th><th>Partei</th>"));
+		div.append(jQuery("<p><br> Kandidaat leitud: </p><br />"));
+		
+		
+		
+		//jQuery.getJSON("http://66.evalimised-ut.appspot.com/candidate.json", function(data){
+		
+		jQuery.getJSON("proov.json", function(data){
+			
+			
+			jQuery.each(data, function(index, item){
+				
+				found.append(jQuery("<tr><td>" + item.name + "</td><td>" + item.region_name + "</td><td>" + item.party_name + "</td></tr>"));
+			
+			});
+		});
+		
+		
+	}
+	
+	
 	else {jQuery(div).empty();
 	jQuery(tablehead).empty();
 	jQuery(found).empty();
