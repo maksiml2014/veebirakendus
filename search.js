@@ -100,9 +100,9 @@ function getForm(form) {
 		
 		
 		
-		//jQuery.getJSON("http://66.evalimised-ut.appspot.com/candidate.json", function(data){
+		jQuery.getJSON("http://779.evalimised-ut.appspot.com/uuususus.json", function(data){
 		
-		jQuery.getJSON("proov.json", function(data){
+		//jQuery.getJSON("uuususus.json", function(data){
 			
 			
 			jQuery.each(data, function(index, item){
