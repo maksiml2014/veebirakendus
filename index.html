@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html>
-    
-	<head>
-		<title>e-valimised</title>
+    <head>
+
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
         <link type="text/css" href="jquery-ui-1.8.13.custom.css" rel="stylesheet">
         <link href="stylesheet.css" rel="stylesheet" media="screen">
         <script type="text/javascript" src="jquery-1.6.4.min.js"></script>
         <script type="text/javascript" src="jquery-ui-1.8.13.custom.min.js"></script>
         <script type="text/javascript" src="jquery.address-1.5.min.js"></script>
-        <script type="text/javascript" src="jquery-ui.js"></script>
-		<script type="text/javascript" src="complete.js"></script>
         <script type="text/javascript" src="tabs.js"></script>
 		<script src="loading.js"></script>
 		<script src="search.js"></script>
@@ -37,7 +34,7 @@
                 <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-corner-all">
                     <li><a href="#Kodu" title="Kodu">Kodu</a></li>
                     <li><a href="#Statistika" title="Statistika">Statistika</a></li>
-                    <li><a href="#Kandidaadid" onclick="getForm(searchform)" title="Kandidaadid">Kandidaadid</a></li> 
+                    <li><a href="#Kandidaadid" title="Kandidaadid">Kandidaadid</a></li>
                     <li><a href="#Lisa_kandidaadiks" title="Lisa_kandidaadiks">Lisa kandidaadiks</a></li>
                 </ul>
 				<div id="Kodu">
@@ -295,10 +292,9 @@
 					</div>
 				</div>
 				</div>
-				<div id="Kandidaadid" >
-					
+				<div id="Kandidaadid">
 					<h1> Kandidaadid </h1>
-					<form name="searchform" action="">
+					<form name="searchform" action="/partei" method="get">
 					<div>
 						<p id="search">
 							Otsi nime järgi
@@ -306,7 +302,7 @@
 						<table id="search-bg">
 							<tr>
 								<td>
-								<input type="search" name="searchbox" id="complete"/>
+								<input type="search" name="searchbox"/>
 								</td>
 							</tr>
 						</table>
@@ -338,21 +334,22 @@
 							</p>
 							<select name="partei" id="partei">
 							<option value="100">Kõik parteid</option>
-							<option value="101">Eesti Rahvameele erakond</option>
-							<option value="102">Erakond Vali Meid</option>
-							<option value="103">Eesti Kohalik Koduerakond</option>
-							<option value="104">Erakond Uudne Kodu</option>
-							<option value="105">Erakond Tasakaalukus</option>
-							<option value="106">Eestimaa Ühendatud Taimetoitlased</option>
-							<option value="107">Erakond Eesti Sinised Vabanikud</option>
-							<option value="108">Erakond Roheline Muru Meile</option>
-							<option value="109">Eesti Riiklik Tasapinna Kogu</option>
-							<option value="110">Rahvaeitav Erakond</option>
-							<option value="111">Üksikandidaat</option>
+							<option value="2">Eesti Rahvameele erakond</option>
+							<option value="3">Erakond Vali Meid</option>
+							<option value="4">Eesti Kohalik Koduerakond</option>
+							<option value="5">Erakond Uudne Kodu</option>
+							<option value="6">Erakond Tasakaalukus</option>
+							<option value="7">Eestimaa Ühendatud Taimetoitlased</option>
+							<option value="8">Erakond Eesti Sinised Vabanikud</option>
+							<option value="9">Erakond Roheline Muru Meile</option>
+							<option value="10">Eesti Riiklik Tasapinna Kogu</option>
+							<option value="11">Rahvaeitav Erakond</option>
+							<option value="1">Üksikandidaat</option>
 							</select>
 							<div>
 								<div id="searchbutton">
-									<input type="button" value="Otsi" onclick="getForm(this.form)" />
+									<input type="submit" value="Otsi" />
+									<input type="reset" value="Reset" />
 								</div>
 							</div>
 						</div>
@@ -362,12 +359,15 @@
 						<div id="found"></div>
 						<div id="itemL">
 							<div id="stat_table-wrapper">
-								<table  id=tablejson onmouseover=(sorttable.makeSortable(tablejson))>
-
+								<table class="sortable">
+									<thead>
+										<tr id="tablehead">
+										</tr>
+									</thead>
+									<tbody id="foundbody">
+									</tbody>
 								</table>
-								
 							</div>
-							
 						</div>
 					</div>
 				</div>
