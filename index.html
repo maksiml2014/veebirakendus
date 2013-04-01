@@ -18,9 +18,10 @@
 		<script src="validation.js"></script>
 		<script src="loading.js"></script>
 		<script src="search.js"></script>
+		<script src="erakond.js"></script>
         
     </head>
-    <body>
+    <body onload="Stattable(parteitabel)">
     	<div id="headerbig">
 				<div id="headerleft">
 					<img class="img" alt="" src="http://www.clker.com/cliparts/Z/n/O/W/1/Q/tick-in-checkbox-md.png">
@@ -35,7 +36,7 @@
         <div class="body">
             <div id="tabs">
                 <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-corner-all">
-                    <li><a href="#Kodu" title="Kodu">Kodu</a></li>
+                    <li><a href="#Kodu"  title="Kodu">Kodu</a></li>
                     <li><a href="#Statistika" title="Statistika">Statistika</a></li>
                     <li><a href="#Kandidaadid" onclick="getForm(searchform)" title="Kandidaadid">Kandidaadid</a></li> 
                     <li><a href="#Lisa_kandidaadiks" title="Lisa_kandidaadiks">Lisa kandidaadiks</a></li>
@@ -62,55 +63,14 @@
 					<div id="map">
 						<img class="img2" alt="" src="map.png">
 					</div>
+					
 					<div id="table-wrapper">
+						<form name="parteitabel">
 						<div id="table-scroll">
-							<table class="sortable">
-								<!--<thead>-->
-								<!--	<tr>-->
-								<!--	<th><span class="text">A</span></th>-->
-								<!--<th><span class="text">B</span></th>-->
-								<!--<th><span class="text">C</span></th>-->
-								<!--</tr>-->
-								<!--</thead>-->
-								<thead>
-									<tr>
-											<th>Erakond</th><th>% häältest</th><th> Hääli</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Eesti Rahvameele erakond</td><td>41</td><td>1763</td>
-										</tr>
-										<tr>
-											<td>Erakond Vali Meid</td><td>21</td><td>742</td>
-										</tr>
-										<tr>
-											<td>Eesti Kohalik Koduerakond</td><td>20</td><td>710</td>
-										</tr>
-										<tr>
-											<td>Erakond Uudne Kodu</td><td>14</td><td>440</td>
-										</tr>
-										<tr>
-											<td>Erakond Tasakaalukus</td><td>24</td><td>34</td>
-										</tr>
-										<tr>
-											<td>Eestimaa Ühendatud Taimetoitlased</td><td>25</td><td>35</td>
-										</tr>
-										<tr>
-											<td>Erakond Eesti Sinised Vabanikud</td><td>26</td><td>36</td>
-										</tr>
-										<tr>
-											<td>Erakond Roheline Muru Meile</td><td>27</td><td>37</td>
-										</tr>
-										<tr>
-											<td>Eesti Riiklik Tasapinna Kogu</td><td>28</td><td>38</td>
-										</tr>
-										<tr>
-											<td>Rahvaeitav Erakond</td><td>29</td><td>39</td>
-										</tr>
-									</tbody>
-								</table>
+							<table id="tablestat" onmouseover=(sorttable.makeSortable(tablestat))>
+							</table>
 						</div>
+						</form>
 					</div>
 					</div>
 				</div>
@@ -118,52 +78,36 @@
 					<h1> Statistika </h1>
 					<div id="row">
 						<div id="itemL">
-							<div id="map">
-								<img class="stat_map" alt="" src="map.png"/>
-							</div>
+						<div id="choosepiirkond">
+							<p id="choose">
+								Vali ringkond:
+							</p>
+							<select name="piirkond" id ="piirkond">
+							<option value="0">Kogu Eesti</option>
+							<option value="1">Valimisringkond nr 1 - Tallinna Haabersti, Põhja-Tallinna ja Kristiine linnaosa</option>
+							<option value="2">Valimisringkond nr 2 - Tallinna Kesklinna, Lasnamäe ja Pirita linnaosa</option>
+							<option value="3">Valimisringkond nr 3 - Tallinna Mustamäe ja Nõmme linnaosa</option>
+							<option value="4">Valimisringkond nr 4 - Harju- (v.a Tallinn) ja Raplamaa</option>
+							<option value="5">Valimisringkond nr 5 - Hiiu-, Lääne- ja Saaremaa</option>
+							<option value="6">Valimisringkond nr 6 - Lääne-Virumaa</option>
+							<option value="7">Valimisringkond nr 7 - Ida-Virumaa</option>
+							<option value="8">Valimisringkond nr 8 - Järva- ja Viljandimaa</option>
+							<option value="9">Valimisringkond nr 9 - Jõgeva- ja Tartumaa (v.a Tartu linn)</option>
+							<option value="10">Valimisringkond nr 10 - Tartu linn</option>
+							<option value="11">Valimisringkond nr 11 - Võru-, Valga- ja Põlvamaa</option>
+							<option value="12">Valimisringkond nr 12 - Pärnumaa</option>
+							</select>
 						</div>
+					</div>
 					<div id="itemL">
 						<h1>Ringkond</h1>
 						<div id="stat_table-wrapper">
-							<table class="sortable">
-								<thead>
-									<tr>
-										<th>Partei</th><th> % häältest</th><th>Hääli</th>
-									</tr>
-								</thead>
-								<tbody>
-										<tr>
-												<td>Eesti Rahvameele erakond</td><td>41</td><td>1763</td>
-											</tr>
-											<tr>
-												<td>Erakond Vali Meid</td><td>21</td><td>742</td>
-											</tr>
-											<tr>
-												<td>Eesti Kohalik Koduerakond</td><td>20</td><td>710</td>
-											</tr>
-											<tr>
-												<td>Erakond Uudne Kodu</td><td>14</td><td>440</td>
-											</tr>
-											<tr>
-												<td>Erakond Tasakaalukus</td><td>24</td><td>34</td>
-											</tr>
-											<tr>
-												<td>Eestimaa Ühendatud Taimetoitlased</td><td>25</td><td>35</td>
-											</tr>
-											<tr>
-												<td>Erakond Eesti Sinised Vabanikud</td><td>26</td><td>36</td>
-											</tr>
-											<tr>
-												<td>Erakond Roheline Muru Meile</td><td>27</td><td>37</td>
-											</tr>
-											<tr>
-												<td>Eesti Riiklik Tasapinna Kogu</td><td>28</td><td>38</td>
-											</tr>
-											<tr>
-												<td>Rahvaeitav Erakond</td><td>29</td><td>39</td>
-											</tr>
-										</tbody>
-							</table>
+							<form name="parteitabel">
+								<div id="table-scroll">
+									<table id="tablestat2" onmouseover=(sorttable.makeSortable(tablestat2))>
+									</table>
+								</div>
+							</form>
 						</div>
 					</div>
 					<div id="row">
@@ -352,7 +296,8 @@
 							</select>
 							<div>
 								<div id="searchbutton">
-									<input type="button" value="Otsi" onclick="getForm(this.form)" />
+						
+									<input type="button" value="Otsi" onclick="getForm(this.form);waiter()" />
 								</div>
 							</div>
 						</div>
