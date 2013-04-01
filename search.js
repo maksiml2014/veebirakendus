@@ -5,7 +5,7 @@ function getForm(form) {
 	var name = form.searchbox.value;
 	var piirkond = document.getElementById("piirkond").value;
 	var partei = document.getElementById("partei").value;
-	var link="1001.evalimised-ut.appspot.com/partei?searchbox=" + name + "&piirkond=" + piirkond + "&partei=" + partei
+	var link="partei?searchbox=" + name + "&piirkond=" + piirkond + "&partei=" + partei
 	
 	
 	if (name != "" && piirkond==0 && partei == 100) {
