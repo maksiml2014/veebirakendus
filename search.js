@@ -10,7 +10,7 @@ function getForm(form) {
 	
 	if (name != "" && piirkond==0 && partei == 100) {
 		jQuery(table).empty();
-		table.append(jQuery("<thead><th>Partei</th><th>Piirkond</th><th>Kandidaat</th><thead><tbody><tr>"));
+		table.append(jQuery("<thead><th>Kandidaat</th><thead><tbody><tr>"));
 		jQuery.getJSON(link, function(result) {
 			jQuery.each(result, function(index, item) {
 				if (index != "id") {
