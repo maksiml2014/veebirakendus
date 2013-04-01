@@ -98,92 +98,42 @@
 							<option value="12">Valimisringkond nr 12 - Pärnumaa</option>
 							</select>
 						</div>
+						<p id="choose">
+								Vali erakond:
+							</p>
+							<select name="partei" id="partei">
+							<option value="100">Kõik parteid</option>
+							<option value="2">Eesti Rahvameele erakond</option>
+							<option value="3">Erakond Vali Meid</option>
+							<option value="4">Eesti Kohalik Koduerakond</option>
+							<option value="5">Erakond Uudne Kodu</option>
+							<option value="6">Erakond Tasakaalukus</option>
+							<option value="7">Eestimaa Ühendatud Taimetoitlased</option>
+							<option value="8">Erakond Eesti Sinised Vabanikud</option>
+							<option value="9">Erakond Roheline Muru Meile</option>
+							<option value="10">Eesti Riiklik Tasapinna Kogu</option>
+							<option value="11">Rahvaeitav Erakond</option>
+							<option value="1">Üksikandidaat</option>
+							</select>
 					</div>
 					<div id="itemL">
-						<h1>Ringkond</h1>
-						<div id="stat_table-wrapper">
-							<form name="parteitabel">
-								<div id="table-scroll">
-									<table id="tablestat2" onmouseover=(sorttable.makeSortable(tablestat2))>
-									</table>
-								</div>
-							</form>
-						</div>
+						<p>Siia tuleb diagram</p>
 					</div>
 					<div id="row">
 						<div id="itemL">
-							<div id="radiobuttons">
-								<form>
-									<table>
-											<tbody>
-												<tr>
-													<th>
-													<input id="load" onclick="waiter()" type="radio" name="erakond" value="kõik" checked="checked">
-													Kõik erakonnad</th>
-												</tr>
-												<tr>
-													<th>
-													<input id="load" onclick="waiter()" type="radio" name="erakond" value="iseseisvus">
-													Eesti Rahvameele erakond</th>
-												</tr>
-												<tr>
-													<th>
-													<input id="load" onclick="waiter()" type="radio" name="erakond" value="kesk">
-													Erakond Vali Meid</th>
-												</tr>
-												<tr>
-													<th>
-													<input id="load" onclick="waiter()" type="radio" name="erakond" value="rahva">
-													Eesti Kohalik Koduerakond</th>
-												</tr>
-												<tr>
-													<th>
-													<input id="load" onclick="waiter()" type="radio" name="erakond" value="reform">
-													Erakond Uudne Kodu</th>
-												</tr>
-												<tr>
-													<th>
-													<input id="load" onclick="waiter()" type="radio" name="erakond" value="vaba">
-													Erakond Tasakaalukus</th>
-												</tr>
-												<tr>
-													<th>
-													<input id="load" onclick="waiter()" type="radio" name="erakond" value="vasak">
-													Eestimaa Ühendatud Taimetoitlased</th>
-												</tr>
-												<tr>
-													<th>
-													<input id="load" onclick="waiter()" type="radio" name="erakond" value="krist">
-													Erakond Eesti Sinised Vabanikud</th>
-												</tr>
-												<tr>
-													<th>
-													<input id="load" onclick="waiter()" type="radio" name="erakond" value="roheli">
-													Erakond Roheline Muru Meile</th>
-												</tr>
-												<tr>
-													<th>
-													<input id="load" onclick="waiter()" type="radio" name="erakond" value="irl">
-													Eesti Riiklik Tasapinna Kogu</th>
-												</tr>
-												<tr>
-													<th>
-													<input id="load" onclick="waiter()" type="radio" name="erakond" value="sde">
-													Rahvaeitav Erakond</th>
-												</tr>
-												<tr>
-													<th>
-													<input id="load" onclick="waiter()" type="radio" name="erakond" value="Ć¼ksi">
-													Üksikkandidaat</th>
-												</tr>
-												
-											</tbody>
+							<h1>Ringkond</h1>
+							<div id="stat_table-wrapper">
+								<form name="parteitabel">
+									<div id="table-scroll">
+										<table id="tablestat2" onmouseover=(sorttable.makeSortable(tablestat2))>
 										</table>
-									</form>
+									</div>
+								</form>
 							</div>
 						</div>
 						<div id="itemL">
-							<h6>Erakond</h6>
+							<h1>Erakond</h1>
+							
 							<div id="stat_table-wrapper">
 								<table class="sortable">
 										<thead>
@@ -282,17 +232,17 @@
 							</p>
 							<select name="partei" id="partei">
 							<option value="100">Kõik parteid</option>
-							<option value="101">Eesti Rahvameele erakond</option>
-							<option value="102">Erakond Vali Meid</option>
-							<option value="103">Eesti Kohalik Koduerakond</option>
-							<option value="104">Erakond Uudne Kodu</option>
-							<option value="105">Erakond Tasakaalukus</option>
-							<option value="106">Eestimaa Ühendatud Taimetoitlased</option>
-							<option value="107">Erakond Eesti Sinised Vabanikud</option>
-							<option value="108">Erakond Roheline Muru Meile</option>
-							<option value="109">Eesti Riiklik Tasapinna Kogu</option>
-							<option value="110">Rahvaeitav Erakond</option>
-							<option value="111">Üksikandidaat</option>
+							<option value="2">Eesti Rahvameele erakond</option>
+							<option value="3">Erakond Vali Meid</option>
+							<option value="4">Eesti Kohalik Koduerakond</option>
+							<option value="5">Erakond Uudne Kodu</option>
+							<option value="6">Erakond Tasakaalukus</option>
+							<option value="7">Eestimaa Ühendatud Taimetoitlased</option>
+							<option value="8">Erakond Eesti Sinised Vabanikud</option>
+							<option value="9">Erakond Roheline Muru Meile</option>
+							<option value="10">Eesti Riiklik Tasapinna Kogu</option>
+							<option value="11">Rahvaeitav Erakond</option>
+							<option value="1">Üksikandidaat</option>
 							</select>
 							<div>
 								<div id="searchbutton">
