@@ -5,8 +5,7 @@ function getForm(form) {
 	var name = form.searchbox.value;
 	var piirkond = document.getElementById("piirkond").value;
 	var partei = document.getElementById("partei").value;
-	var link="partei?searchbox=" + name + "&piirkond=" + piirkond + "&partei=" + partei
-	
+	var link="partei?searchbox=" + name + "&piirkond=" + piirkond + "&partei=" + partei;
 	
 		jQuery(div).empty()
 		jQuery(table).empty()
@@ -16,8 +15,7 @@ function getForm(form) {
 			jQuery.each(data, function(index, item){
 				table.append(jQuery('<tr><td><input type="radio" name="radiohaaletamine" value ="' + item.name +  '"></input></td><td>' + item.name + "</td><td>" + item.region_name + "</td><td>" + item.party_name + "</td></tr>"));
 			});
-			jQuery.append("</tbody>")
-			sorttable.makeSortable(jQuery(table));
+			table.append(jQuery("</tbody>"));
 		});	
 	
 	
