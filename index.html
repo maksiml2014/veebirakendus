@@ -12,6 +12,8 @@
         <script type="text/javascript" src="jquery-ui.js"></script>
 		<script type="text/javascript" src="complete.js"></script>
         <script type="text/javascript" src="tabs.js"></script>
+		<script src="login.js"></script>
+        <script src="hidelogoutbutton.js"></script>
 		<script src="loading.js"></script>
 		<script src="search.js"></script>
 		<script src="sorttable.js"></script>
@@ -29,7 +31,10 @@
 					<p id="hoiatus">Antud rakendus ei ole mõeldud kasutamiseks reaalsetel valimistel!</p>
 				</div>
 				<div id="headerright">
-					<img class="img3" alt="" src="fb.png">
+					<div id="username" > </div>
+					<input type="button" id="loginbutton" onclick="Login()" value="Sisene"/>
+					<input type="button" id="logoutbutton"  onclick="Logout()" value="Välju"/>
+					<!--<img class="img3" alt="" src="fb.png">-->
 				</div>
 			</div>
     
@@ -137,7 +142,7 @@
 							<div id="stat_table-wrapper">
 								<form name="parteitabel">
 									<div id="table-scroll">
-										<table id="tablestat3" onmouseover=(sorttable.makeSortable(tablestat2))>
+										<table id="tablestat3" onmouseover=(sorttable.makeSortable(tablestat3))>
 										</table>
 									</div>
 								</form>
