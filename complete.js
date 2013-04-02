@@ -1,12 +1,13 @@
 ﻿$(function() {
-	/*var names = [ "Magdalena Malejeva", "Neeme Näljahäda", "Olga Oravasaba", "Eduard Ekskavaator", "Ferdinand Fuksia", "Gerhard Gätegõverdus", 
-	"Harald Hamster", "Ildegaard Ilumeel", "Janaida Jalutova", "Kõikme Kannatameära", "Filbert Hollins", "Ulrich Van Andringa", "Carl Zino"];*/
+	//var names = [ "Magdalena Malejeva", "Neeme Näljahäda", "Olga Oravasaba", "Eduard Ekskavaator", "Ferdinand Fuksia", "Gerhard Gätegõverdus", 
+	//"Harald Hamster", "Ildegaard Ilumeel", "Janaida Jalutova", "Kõikme Kannatameära", "Filbert Hollins", "Ulrich Van Andringa", "Carl Zino"];
 	var names=[]
-	jQuery.getJSON("/partei?searchbox=&piirkond=0&partei=100", function(result){
-		jQuery.each(result, function(index, item){
-			names.push(item.name);
-		});
-	});
+	 jQuery.getJSON("/partei?searchbox=&piirkond=0&partei=100", function(result){
+	  jQuery.each(result, function(index, item){
+	   names.push(item.name);
+	  });
+	 });
+	
 	var accentMap = {
 		"ä": "a",
 		"ö": "o"
