@@ -12,7 +12,7 @@
         <script type="text/javascript" src="jquery-ui.js"></script>
 		<script type="text/javascript" src="complete.js"></script>
         <script type="text/javascript" src="tabs.js"></script>
-		<script src="login.js"></script>
+        <script src="login.js"></script>
         <script src="hidelogoutbutton.js"></script>
 		<script src="loading.js"></script>
 		<script src="search.js"></script>
@@ -87,7 +87,7 @@
 							<p id="choose">
 								Vali ringkond:
 							</p>
-							<select name="piirkond" id ="statpiirkond" onchange="Stattable(parteitabel)">
+							<select name="piirkond" id ="statpiirkond">
 							<option value="0">Kogu Eesti</option>
 							<option value="1">Valimisringkond nr 1 - Tallinna Haabersti, Põhja-Tallinna ja Kristiine linnaosa</option>
 							<option value="2">Valimisringkond nr 2 - Tallinna Kesklinna, Lasnamäe ja Pirita linnaosa</option>
@@ -106,7 +106,7 @@
 						<p id="choose">
 								Vali erakond:
 							</p>
-							<select name="partei" id="statpartei" onchange="Stattable(parteitabel)">
+							<select name="partei" id="statpartei">
 							<option value="100">Kõik parteid</option>
 							<option value="2">Eesti Rahvameele erakond</option>
 							<option value="3">Erakond Vali Meid</option>
@@ -134,24 +134,68 @@
 										</table>
 									</div>
 								</form>
-
 							</div>
 						</div>
 						<div id="itemL">
-						<h1>Erakond</h1>
+							<h1>Erakond</h1>
+							
 							<div id="stat_table-wrapper">
-								<form name="parteitabel">
-									<div id="table-scroll">
-										<table id="tablestat3" onmouseover=(sorttable.makeSortable(tablestat3))>
-										</table>
-									</div>
-								</form>
+								<table class="sortable">
+										<thead>
+											<tr>
+												<th>Kandidaat</th><th>Hääli</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Magdalena Malejeva</td><td>1764</td>
+											</tr>
+											<tr>
+												<td>Neeme Näljahäda</td><td>742</td>
+											</tr>
+											<tr>
+												<td>Olga Oravasaba</td><td>710</td>
+											</tr>
+											<tr>
+												<td>Eduard Ekskavaator</td><td>440</td>
+											</tr>
+											<tr>
+												<td>Ferdinand Fuksia</td><td>4</td>
+											</tr>
+											<tr>
+												<td>Gerhard Gätegõverdus</td><td>35</td>
+											</tr>
+											<tr>
+												<td>Harald Hamster</td><td>36</td>
+											</tr>
+											<tr>
+												<td>Ildegaard Ilumeel</td><td>37</td>
+											</tr>
+											<tr>
+												<td>Janaida Jalutova</td><td>38</td>
+											</tr>
+											<tr>
+												<td>Kõikme Kannatameära</td><td>39</td>
+											</tr>
+											<tr>
+												<td>Filbert Hollins</td><td>310</td>
+											</tr>
+											<tr>
+												<td>Ulrich Van Andringa</td><td>311</td>
+											</tr>
+											<tr>
+												<td>Carl Zino</td><td>312</td>
+											</tr>
+										</tbody>
+									</table>
+
 							</div>
 						</div>
 					</div>
 				</div>
 				</div>
 				<div id="Kandidaadid" >
+					
 					<h1> Kandidaadid </h1>
 					<form name="searchform" action="">
 					<div>
@@ -218,7 +262,7 @@
 						<div id="found"></div>
 						<div id="itemL">
 							<div id="stat_table-wrapper">
-								<table  id="tablesearch" onmouseover=(sorttable.makeSortable(tablejson))>
+								<table  id=tablejson onmouseover=(sorttable.makeSortable(tablejson))>
 
 								</table>
 								
@@ -226,8 +270,19 @@
 							
 						</div>
 					</div>
+					<div id="row">
+						<div id="itemL">
+							<div>
+								<input type="button" id="addvote" onclick="alert('Täname hääletamast!')" value="Hääleta"/>
+								<input type="button" id="deletevote" onclick="alert('Olete oma hääle tühistanud!')" value="Tühista hääl"/>
+							</div>
+						</div>
+					</div>
 				</div>
 				<div id="Lisa_kandidaadiks">
+					<div id="pleaselogin">
+					<h1>Enda kandidatuuri lisamiseks logige palun sisse!</h1>
+					<div id="lisavisible">
 					<h1> Lisa end kandidaadiks </h1>
 					<div id="row">
 						<div id="itemL">
@@ -368,6 +423,8 @@
 						<div id="itemL">
 							
 						</div>
+					</div>
+					</div>
 					</div>
 				</div>
 			</div>
