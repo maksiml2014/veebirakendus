@@ -5,6 +5,7 @@ function hidelogout(){
 	document.getElementById("deletevote").style.visibility='hidden';
 	document.getElementById("lisavisible").style.visibility='hidden';
 	document.getElementById("pleaselogin").style.visibility='visible';
+	document.getElementById("logississe").style.visibility='visible';
 }
 function hidelogin(){
 	document.getElementById("loginbutton").style.visibility = 'hidden';
@@ -12,6 +13,7 @@ function hidelogin(){
 	document.getElementById("deletevote").style.visibility='visible';
 	document.getElementById("lisavisible").style.visibility='visible';
 	document.getElementById("pleaselogin").style.visibility='hidden';
+	document.getElementById("logississe").style.visibility='hidden';
 }
 function showlogout(){
 	document.getElementById("logoutbutton").style.visibility = 'visible';
@@ -19,6 +21,7 @@ function showlogout(){
 	document.getElementById("deletevote").style.visibility='visible';
 	document.getElementById("lisavisible").style.visibility='visible';
 	document.getElementById("pleaselogin").style.visibility='hidden';
+	document.getElementById("logississe").style.visibility='hidden';
 }
 function showlogin(){
 	document.getElementById("loginbutton").style.visibility = 'visible';
@@ -26,4 +29,5 @@ function showlogin(){
 	document.getElementById("deletevote").style.visibility='hidden';
 	document.getElementById("lisavisible").style.visibility='hidden';
 	document.getElementById("pleaselogin").style.visibility='visible';
+	document.getElementById("logississe").style.visibility='visible';
 }

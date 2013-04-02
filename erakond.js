@@ -1,7 +1,6 @@
 function Stattable(form) {
 	hidelogout();
 	
-	
 	var table= jQuery('#tablestat');
 	var piirkond = document.getElementById("statpiirkond").value;
 	var partei = document.getElementById("statpartei").value;
@@ -42,5 +41,7 @@ function Stattable(form) {
 		});
 	table3.append(jQuery("</tr></tbody>"));
 	});
+	
+	
 }
 

@@ -6,6 +6,8 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
         <link type="text/css" href="jquery-ui-1.8.13.custom.css" rel="stylesheet">
         <link href="stylesheet.css" rel="stylesheet" media="screen">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    	<script type="text/javascript" src= googlechart.js></script>        
         <script type="text/javascript" src="jquery-1.6.4.min.js"></script>
         <script type="text/javascript" src="jquery-ui-1.8.13.custom.min.js"></script>
         <script type="text/javascript" src="jquery.address-1.5.min.js"></script>
@@ -122,7 +124,7 @@
 							</select>
 					</div>
 					<div id="itemL">
-						<p>Siia tuleb diagram</p>
+						<div id="chart_div"></div>
 					</div>
 					<div id="row">
 						<div id="itemL">
@@ -229,14 +231,15 @@
 					<div id="row">
 						<div id="itemL">
 							<div>
-								<input type="button" id="addvote" onclick="alert('Täname hääletamast!')" value="Hääleta"/>
-								<input type="button" id="deletevote" onclick="alert('Olete oma hääle tühistanud!')" value="Tühista hääl"/>
+								<input type="button" id="addvote" onclick="hääleta()" value="Hääleta"/>
+								<input type="button" id="deletevote" onclick="tühista()" value="Tühista hääl"/>
+								<p id="logississe"> Hääletamiseks logige sisse </p>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div id="Lisa_kandidaadiks">
-										<div id="pleaselogin">
+					<div id="pleaselogin">
 					<h1>Enda kandidatuuri lisamiseks logige palun sisse!</h1>
 					<div id="lisavisible">
 					<h1> Lisa end kandidaadiks </h1>
