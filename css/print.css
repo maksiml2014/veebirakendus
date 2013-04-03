@@ -1,0 +1,23 @@
+body { 
+  color : #000000; 
+  background : #ffffff; 
+  font-family : "Times New Roman", Times, serif;
+  font-size : 12px; 
+}
+
+#headerbig, #footer, #map, #lefttab, #righttab{
+	display:none;
+}
+
+ul{
+	display:none;
+}
+
+#radiobuttons{
+	display:none;
+}
+
+h6{
+	padding-left:2%;
+	font-size:xx-large;	
+}

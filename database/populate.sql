@@ -15,6 +15,7 @@ INSERT INTO user VALUES (13, "Kõikme Kannatameära");
 INSERT INTO user VALUES (14, "Filbert Hollins");
 INSERT INTO user VALUES (15, "Ulrich Van Andringa");
 INSERT INTO user VALUES (16, "Carl Zino");
+INSERT INTO user (name) VALUES ("Karu Ott")
 
 
 

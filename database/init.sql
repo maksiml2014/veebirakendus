@@ -12,11 +12,14 @@ CREATE TABLE user(id INTEGER UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT, name VA
 # create candidate
 CREATE TABLE candidate(id INTEGER UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT, name VARCHAR(50) NOT NULL, photo VARCHAR(100), addinfo VARCHAR(1000), region_id INT NOT NULL REFERENCES region(id), party_id INT NOT NULL REFERENCES party(id) );
 
+#candidate name UNIQUE
+ALTER TABLE candidate ADD CONSTRAINT UNIQUE (name);
+
 
 # create vote
 CREATE TABLE vote(id INTEGER UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT, user_id INT NOT NULL REFERENCES USER(ID), candidate_id INT NOT NULL REFERENCES candidate(id), time TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL);
 
 # vote only for one candidate
-alter table vote add unique index(id, user_id);
+alter table vote add unique index(user_id);
 
 
