@@ -6,6 +6,7 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
         <link type="text/css" href="css/jquery-ui-1.8.13.custom.css" rel="stylesheet">
         <link href="css/stylesheet.css" rel="stylesheet" media="screen">
+        <script type="text/javascript" src="/_ah/channel/jsapi"></script>
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     	<script type="text/javascript" src= js/googlechart.js></script>        
         <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
@@ -25,10 +26,12 @@
 		<script src="js/erakond.js"></script>
 		<script src="js/kandidaadiks.js"></script>
 		<script src="js/vote.js"></script>
+		
         
         
+
     </head>
-    <body onload="Stattable(parteitabel)">
+    <body onload="onLoad(parteitabel)">
     	<div id="headerbig">
 				<div id="headerleft">
 					<img class="img" alt="" src="http://www.clker.com/cliparts/Z/n/O/W/1/Q/tick-in-checkbox-md.png">
@@ -231,7 +234,7 @@
 						<div id="found"></div>
 						<div id="itemL">
 							<div id="stat_table-wrapper">
-								<table  id="tablesearch" onmouseover=(sorttable.makeSortable(tablejson))>
+								<table  id="tablesearch" onmouseover=(sorttable.makeSortable(tablesearch))>
 
 								</table>
 								
@@ -242,7 +245,7 @@
 					<div id="row">
 						<div id="itemL">
 							<div>
-								<input type="button" id="addvote" onclick="vote()" value="Hääleta"/>
+								<input type="button" id="addvote" onclick="sendMessage()" value="Hääleta"/>
 								<input type="button" id="deletevote" onclick="removevote()" value="Tühista hääl"/>
 								<p id="logississe"> Hääletamiseks logige sisse </p>
 							</div>

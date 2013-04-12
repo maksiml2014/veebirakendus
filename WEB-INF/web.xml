@@ -9,6 +9,15 @@
 		<url-pattern>/uuususus</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>Channel</servlet-name>
+		<servlet-class>uus.Channel</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Channel</servlet-name>
+		<url-pattern>/channel</url-pattern>
+	</servlet-mapping>
+	
 	
 	<servlet>
 		<servlet-name>partei</servlet-name>

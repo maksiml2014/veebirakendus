@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.appengine.api.channel.ChannelService;
+import com.google.appengine.api.channel.ChannelServiceFactory;
 import com.google.appengine.api.rdbms.AppEngineDriver;
 import com.google.gson.Gson;
 
@@ -80,7 +82,7 @@ public class UuusususServlet extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
 		// resp.sendError(400);
-
+		ChannelService channelService = ChannelServiceFactory.getChannelService();
 		PrintWriter out = resp.getWriter();
 		Connection c = null;
 //		String func = "";
@@ -111,6 +113,7 @@ public class UuusususServlet extends HttpServlet {
 				if (success == 2){
 					resp.sendError(403);
 				}
+				// TODO send message
 
 			}
 		} catch (SQLException e) {

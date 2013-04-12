@@ -14,6 +14,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.appengine.api.channel.ChannelMessage;
+import com.google.appengine.api.channel.ChannelService;
+import com.google.appengine.api.channel.ChannelServiceFactory;
 import com.google.appengine.api.rdbms.AppEngineDriver;
 import com.google.gson.Gson;
 
@@ -111,7 +114,7 @@ public class StatPartei extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
 		// resp.sendError(400);
-
+		ChannelService channelService = ChannelServiceFactory.getChannelService();
 		PrintWriter out = resp.getWriter();
 		Connection c = null;
 		try {
@@ -136,6 +139,9 @@ public class StatPartei extends HttpServlet {
 				stmt.setString(3, region_id);
 				int success = 2;
 				success = stmt.executeUpdate();
+				// TODO send message
+				
+//				channelService.sendMessage(new Cha);
 
 			}
 		} catch (SQLException e) {
