@@ -5,7 +5,6 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -22,6 +21,7 @@ import com.google.gson.Gson;
 @SuppressWarnings("serial")
 public class Channel extends HttpServlet {
 	private static long TWO_HOURS = 60*60*1000*2;
+	
 	private class Id {
 		String id;
 		long time;
@@ -31,19 +31,24 @@ public class Channel extends HttpServlet {
 			this.time = System.currentTimeMillis();
 		}
 	}
-	private List<Id> activeIds = new ArrayList<Id>();
-	private List<Id> syncActiveIds = Collections.synchronizedList(this.activeIds);
-	public List<String> getActiveIds(){
-		// TODO create list of Strings
-		
+	
+	static private List<Id> activeIds = new ArrayList<Id>();
+	static private List<Id> syncActiveIds = Collections.synchronizedList(activeIds);
+	
+	public static synchronized List<String> getActiveIds(){
+		List<String> idStrings = new ArrayList<String>();
 		long now = System.currentTimeMillis();
-		for (Id id : this.syncActiveIds){
+		for (Id id : syncActiveIds){
 			if (now - id.time > TWO_HOURS){
-				this.syncActiveIds.remove(id);
+				syncActiveIds.remove(id);
 			}
-			// TODO else add ids to list
-		// TODO return list
+			else {
+				idStrings.add(id.id);
+				
+				
+			}
 		}
+		return idStrings;
 	}
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {

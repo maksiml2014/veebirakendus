@@ -9,6 +9,7 @@ function onLoad(form){
 	hidelogout();
 	sendGetToChannel();
 }
+
 function Stattable() {
 	
 
@@ -105,11 +106,15 @@ function onOpened() {
 
 function onMessage(msg) {
 	alert("message");
-    Stattable();
 }
 
 function onMessage(err) {
-    alert(err);
+//    alert(err.data);
+	if (err.data == "vote_updated"){
+		Stattable();		
+	}else if (err.data == "candidate_updated"){
+		getForm();
+	}
 }
 function onError(){
 	alert("error");

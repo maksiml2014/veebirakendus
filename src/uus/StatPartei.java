@@ -139,9 +139,14 @@ public class StatPartei extends HttpServlet {
 				stmt.setString(3, region_id);
 				int success = 2;
 				success = stmt.executeUpdate();
-				// TODO send message
+				if (success > 0) {
+					for (String id : Channel.getActiveIds()) {
+						channelService.sendMessage(new ChannelMessage(id,
+								"candidate_updated"));
+
+					}
+				}
 				
-//				channelService.sendMessage(new Cha);
 
 			}
 		} catch (SQLException e) {
@@ -154,6 +159,7 @@ public class StatPartei extends HttpServlet {
 				} catch (SQLException ignore) {
 				}
 		}  //resp.setHeader("Refresh","3; url=/#Kodu");
+
 	}
 	
 	

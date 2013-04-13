@@ -1,8 +1,8 @@
-function getForm(form) {
+function getForm() {
 
+	var name = jQuery('#complete').val();
 	var div = jQuery('#found');
 	var table= jQuery('#tablesearch')
-	var name = form.searchbox.value;
 	var piirkond = document.getElementById("piirkond").value;
 	var partei = document.getElementById("partei").value;
 	var link="partei?searchbox=" + name + "&piirkond=" + piirkond + "&partei=" + partei;

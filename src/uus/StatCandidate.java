@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.appengine.api.channel.ChannelMessage;
 import com.google.appengine.api.channel.ChannelService;
 import com.google.appengine.api.channel.ChannelServiceFactory;
 import com.google.appengine.api.rdbms.AppEngineDriver;
@@ -108,11 +109,12 @@ public class StatCandidate extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
 		// resp.sendError(400);
-		ChannelService channelService = ChannelServiceFactory.getChannelService();
+		ChannelService channelService = ChannelServiceFactory
+				.getChannelService();
 
 		PrintWriter out = resp.getWriter();
 		Connection c = null;
-//		String func = "";
+		// String func = "";
 		String user_id = "";
 		String candidate_id = "";
 		try {
@@ -122,14 +124,14 @@ public class StatCandidate extends HttpServlet {
 
 			candidate_id = req.getParameter("candidate_id");
 			user_id = req.getParameter("user_id");
-			
+
 			if (user_id == "" || candidate_id == "") {
 				resp.sendError(400);
 				// out.println("Parameters missing");
 
 			} else {
 
-//				func = req.getParameter("func");
+				// func = req.getParameter("func");
 
 				String statement = "INSERT INTO vote (user_id, candidate_id) VALUES (?, ?)";
 				PreparedStatement stmt = c.prepareStatement(statement);
@@ -138,7 +140,13 @@ public class StatCandidate extends HttpServlet {
 				// stmt.setString(3, region_id);
 				int success = 2;
 				success = stmt.executeUpdate();
-				// TODO send message
+				if (success > 0) {
+					for (String id : Channel.getActiveIds()) {
+						channelService.sendMessage(new ChannelMessage(id,
+								"vote_updated"));
+
+					}
+				}
 
 			}
 		} catch (SQLException e) {
