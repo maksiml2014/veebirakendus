@@ -26,7 +26,8 @@
 		<script src="js/erakond.js"></script>
 		<script src="js/kandidaadiks.js"></script>
 		<script src="js/vote.js"></script>
-		
+		<script src="js/fblogin.js"></script>
+		<script src="//connect.facebook.net/en_US/all.js"></script>
         
         
 
@@ -39,9 +40,9 @@
 					<p id="hoiatus">Antud rakendus ei ole mõeldud kasutamiseks reaalsetel valimistel!</p>
 				</div>
 				<div id="headerright">
+					<div id="fb-root"></div>
 					<div id="username" > </div>
-					<input type="button" id="loginbutton" onclick="Login()" value="Sisene"/>
-					<input type="button" id="logoutbutton"  onclick="Logout()" value="Välju"/>
+					<div class="fb-login-button" data-show-faces="true" data-width="200" data-max-rows="1"></div>
 					<!--<img class="img3" alt="" src="fb.png">-->
 				</div>
 			</div>
