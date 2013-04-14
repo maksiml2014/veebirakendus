@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html manifest="/cache.manifest" xmlns:fb="https://www.facebook.com/2008/fbml">
     
 	<head>
 		<title>e-valimised</title>
@@ -28,11 +28,12 @@
 		<script src="js/vote.js"></script>
 		<script src="js/fblogin.js"></script>
 		<script src="//connect.facebook.net/en_US/all.js"></script>
+		
         
         
 
     </head>
-    <body onload="onLoad(parteitabel)">
+    <body onload="onLoad(parteitabel);Stattable(parteitabel)">
     	<div id="headerbig">
 				<div id="headerleft">
 					<img class="img" alt="" src="http://www.clker.com/cliparts/Z/n/O/W/1/Q/tick-in-checkbox-md.png">
@@ -40,9 +41,12 @@
 					<p id="hoiatus">Antud rakendus ei ole mõeldud kasutamiseks reaalsetel valimistel!</p>
 				</div>
 				<div id="headerright">
-					<div id="fb-root"></div>
 					<div id="username" > </div>
-					<div class="fb-login-button" data-show-faces="true" data-width="200" data-max-rows="1"></div>
+					<div id="fb-root"></div>
+					<div id="user-info"></div>
+					<button id="loginbutton"></button>
+					<input type="button" id="loginbutton" onclick="Login()" value="Sisene"/>
+					<input type="button" id="logoutbutton"  onclick="Logout()" value="Välju"/>
 					<!--<img class="img3" alt="" src="fb.png">-->
 				</div>
 			</div>
