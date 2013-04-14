@@ -1,7 +1,7 @@
 ﻿#body{
 	margin-right:auto;
+	width:99%;
 	margin-left:auto;
-	width:100%;
 	overflow: hidden;
 	background-color:#6fa8dc;
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -340,4 +340,8 @@ h1{
 	list-style-type: none;
 	width:10%;
 	background-color:white;
+}
+
+#jQueryAddress{
+	float:left;
 }
