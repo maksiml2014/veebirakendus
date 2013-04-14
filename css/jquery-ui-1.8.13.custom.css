@@ -66,7 +66,7 @@
 /* Interaction states
 ----------------------------------*/
 .ui-state-default  {width:24.5%;}
-.ui-state-default a {width:100%;}
+.ui-state-default a {width:100%; min-width:120px;}
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-state-default { border: 1px solid #29313a; background: #176092; font-weight: bold; color: #fff; outline: none; }
 .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited { color: #fff; text-decoration: none; outline: none; }
 .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus { border: 1px solid #19212a; background: #5db0e6; font-weight: bold; color: #fff; outline: none; }
@@ -99,7 +99,7 @@
  * http://docs.jquery.com/UI/Tabs#theming
  */
 .ui-tabs { position: relative; padding: 4px; zoom: 1;} /* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
-.ui-tabs .ui-tabs-nav li { list-style: none; float: left; position: relative; margin: 0 .2em 1px 0; border-bottom: 0 !important; padding: 0; white-space: nowrap; }
+.ui-tabs .ui-tabs-nav li { list-style: none; float: left; position: relative; margin: 0 .2em 1px 0; border-bottom: 0 !important; padding: 0; white-space: nowrap; min-width:150px;}
 .ui-tabs .ui-tabs-nav li a { float: left; padding: .5em 1em; text-decoration: none; }
 .ui-tabs .ui-tabs-nav li.ui-tabs-selected { margin-bottom: 0; padding-bottom: 1px; }
 .ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a { cursor: text; }
