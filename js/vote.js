@@ -1,4 +1,4 @@
-var username = "Ott%20Karu";
+var username = "";
 //var votefunc = "";
 
 function select_radio_button(group_p) {
@@ -44,7 +44,7 @@ function vote() {
 											// alert("item name" + item.name);
 											// alert("search result" +
 											// searchresult);
-											if (searchresult == "Ott Karu") {
+											if (searchresult == username & username !="") {
 												if (voteValidation()) {
 													// alert ("//TODO");
 
