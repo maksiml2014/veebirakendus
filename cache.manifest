@@ -1,0 +1,34 @@
+CACHE MANIFEST
+
+#ver2
+
+FALLBACK:
+/ /offline.html
+CACHE:
+/index.html
+/offline.html
+/css/stylesheet.css
+/css/print.css
+/css/jquery-ui-1.8.13.custom.css
+/js/complete.js
+/js/erakond.js
+/js/fblogin.js
+/js/googlechart.js
+/js/haaleta.js
+/js/hidelogoutbutton.js
+/js/jquery.address-1.5.min.js
+/js/jquery-1.6.4.min.js
+/js/jquery-1.9.1.js
+/js/jquery-ui.js
+/js/jquery-ui-1.8.13.custom.min.js
+/js/kandidaadiks.js
+/js/loading.js
+/js/login.js
+/js/search.js
+/js/sorttable.js
+/js/tabs.js
+/js/validation.js
+/js/vote.js
+/images/tick-in-checkbox-md.png
+NETWORK:
+*
