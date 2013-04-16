@@ -3,7 +3,7 @@ var userInfo;
 
 window.fbAsyncInit = function() {
 	FB.init({
-		appId : '528306117210739', // change the appId to your appId
+		appId : '511806515522770', // change the appId to your appId
 		status : true,
 		cookie : true,
 		xfbml : true,
@@ -64,14 +64,16 @@ window.fbAsyncInit = function() {
 
 function login(response, info) {
 	if (response.authResponse) {
-		alert(username);
+//		alert(username);
 		username = info.name;
-		alert(username);
+
+//		alert(username);
 		var accessToken = response.authResponse.accessToken;
 
 		userInfo.innerHTML = '<img src="https://graph.facebook.com/' + info.id
 				+ '/picture">' + info.name;
 		button.innerHTML = 'Logout';
+		var result = jQuery.post("/user", {user_name : username});
 		// document.getElementById('other').style.display = "block";
 	}
 }

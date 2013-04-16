@@ -1,8 +1,5 @@
-var username = "";
-//var votefunc = "";
-
 function select_radio_button(group_p) {
-	 document.getElementById(group_p).style.color='white';
+	document.getElementById(group_p).style.color = 'white';
 }
 
 function is_selected(rb_group, lbl_info) {
@@ -29,71 +26,32 @@ function voteValidation() {
 }
 
 function vote() {
-	var link = "partei?searchbox=" + username + "&piirkond=0&partei=100";
-
-	var searchresult = "NOT_FOUND";
-	jQuery
-			.getJSON(
-					link,
-					function(data) {
-						jQuery
-								.each(
-										data,
-										function(index, item) {
-											searchresult = item.name;
-											// alert("item name" + item.name);
-											// alert("search result" +
-											// searchresult);
-											if (searchresult == username & username !="") {
-												if (voteValidation()) {
-													// alert ("//TODO");
-
-													var candidate_radio_group = document
-															.getElementsByName("radiohaaletamine");
-
-													var candidate_id_button = getCheckedRadio(candidate_radio_group);
-
-													var cand_id = candidate_id_button.value;
-													// alert (candidate_id);
-													// alert ("validated")
-//													votefunc = "addvote";
-													var result = jQuery
-															.post(
-																	"/statcandidate",
-																	{
-//																		func : "addvote",
-																		user_id : "17",
-																		candidate_id : cand_id
-																	},
-																	function(
-																			data) {
-																		alert("Hääl edukalt antud!");
-																	})
-															.error(
-																	function() {
-																		alert("Olete juba hääletanud! Hääle tühistamiseks vajutage 'Tühista hääl'.");
-																	})
-
-												}
-											} else {
-												alert("Sellist kandidaati pole");
-											}
-											// DO EVERYTHING
-										});
-					});
-};
-
-function removevote() {
-//	votefunc = "removevote";
-	var result = jQuery.post("/uuususus", {
-		func : "removevote",
-		user_id : "17",
-
-	}, function(data) {
-		alert("Hääl tühistatud!");
-	}).error(function() {
-		alert("Te pole veel häält andnud, et seda tühistada.");
-	})
+	if (voteValidation()) {
+		var candidate_radio_group = document.getElementsByName("radiohaaletamine");
+		var candidate_id_button = getCheckedRadio(candidate_radio_group);
+		var cand_id = candidate_id_button.value;
+//		alert(username);
+		var result = jQuery.post("/statcandidate",
+				{user_name : username,
+				candidate_id : cand_id},
+				function(data){
+					alert("Hääl edukalt antud!");
+				})
+				.error(function() {
+					alert("Olete juba hääletanud! Hääle tühistamiseks vajutage 'Tühista hääl'.");
+				})
+	}
 }
 
-	
+
+function removevote() {
+//	alert(username)
+	var result = jQuery.post("/uuususus", {
+		user_name : username},
+		function(data){
+			alert("Hääl tühistatud!");
+		})
+		.error(function(){
+			alert("Te pole veel häält andnud, et seda tühistada.");
+		})
+}

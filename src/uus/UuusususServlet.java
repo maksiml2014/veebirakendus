@@ -86,20 +86,34 @@ public class UuusususServlet extends HttpServlet {
 				.getChannelService();
 		PrintWriter out = resp.getWriter();
 		Connection c = null;
-		// String func = "";
+		String user_name = "";
 		String user_id = "";
-		// String candidate_id = "";
+		
 		try {
 			DriverManager.registerDriver(new AppEngineDriver());
 			c = DriverManager
 					.getConnection("jdbc:google:rdbms://evalimised-ut-andmebaas:andmebaas/performance_schema");
 
 			// candidate_id = req.getParameter("candidate_id");
-			user_id = req.getParameter("user_id");
+			user_name = req.getParameter("user_name");
 
-			if (user_id == "") {
+			/** Resolve user name to user id */
+			String selectStatement = "SELECT id FROM user WHERE name=?";
+			PreparedStatement sStmt = c.prepareStatement(selectStatement);
+			sStmt.setString(1, user_name);
+			ResultSet sRs = sStmt.executeQuery(selectStatement);
+			List<StatParteiResult> result = new ArrayList<StatParteiResult>();
+			while (sRs.next()) {
+				StatParteiResult spr = new StatParteiResult();
+			
+				spr.setName(sRs.getString(1));
+				user_id = spr.getName();
+				result.add(spr);
+			}
+			
+			if (user_id == ""){
 				resp.sendError(400);
-				// out.println("Parameters missing");
+			
 
 			} else {
 
