@@ -21,6 +21,7 @@ import com.google.appengine.api.rdbms.AppEngineDriver;
 import com.google.gson.Gson;
 
 
+
 @SuppressWarnings("serial")
 public class StatCandidate extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -36,7 +37,7 @@ public class StatCandidate extends HttpServlet {
 			String party = req.getParameter("statpartei");
 			String region = req.getParameter("statpiirkond");
 
-			String SELECT = "SELECT c.name, count(c.id) as votes FROM candidate c, vote v ";
+			String SELECT = "SELECT c.name, count(c.id) as votes, c.party_id, c.region_id FROM candidate c, vote v ";
 			String WHERE = "WHERE v.candidate_id = c.id ";
 			String GROUP_BY = "GROUP by c.id ";
 
@@ -60,9 +61,10 @@ public class StatCandidate extends HttpServlet {
 				StatParteiResult spr = new StatParteiResult();
 
 				spr.setName(rs.getString(1));
-				spr.setPc(rs.getFloat(2));
 				spr.setVotes(rs.getInt(2));
-
+				spr.setParty(rs.getString(3));
+				spr.setRegion(rs.getString(4));
+				
 				result.add(spr);
 			}
 			String json = new Gson().toJson(result);

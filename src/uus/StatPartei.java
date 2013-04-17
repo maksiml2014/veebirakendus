@@ -57,7 +57,7 @@ public class StatPartei extends HttpServlet {
 //	        out.println("<html><head></head><body>You are missing either a message or a name! Try again! Redirecting in 3 seconds...</body></html>");
 //	      } else {
 	      String statement ="SELECT " +
-	      					"p.name, (count(p.id)/(SELECT count(id) FROM vote))*100 as pc, count(p.id) as votes " +
+	      					"p.name, (count(p.id)/(SELECT count(id) FROM vote))*100 as pc, count(p.id) as votes, c.party_id, c.region_id " +
 	      					"FROM party p,candidate c,vote v " +
 	      					"WHERE " +
 	      					"v.candidate_id = c.id AND c.party_id = p.id AND NOT p.id = 1 " +
@@ -65,7 +65,7 @@ public class StatPartei extends HttpServlet {
 	      					"AND c.party_id LIKE " + party + " " +
 	      					"GROUP by p.id " +
 	      					"UNION " +
-	      					"SELECT c.name, (count(c.id)/(SELECT count(id) FROM vote))*100 as pc, count(c.id) as votes " +
+	      					"SELECT c.name, (count(c.id)/(SELECT count(id) FROM vote))*100 as pc, count(c.id) as votes, c.party_id, c.region_id " +
 	      					"FROM candidate c, vote v " +
 	      					"WHERE v.candidate_id = c.id AND c.party_id = 1 " +
 	      					"AND c.region_id LIKE " + region + " " +
@@ -84,6 +84,8 @@ public class StatPartei extends HttpServlet {
 	    	  spr.setName(rs.getString(1));
 	    	  spr.setPc(rs.getFloat(2));
 	    	  spr.setVotes(rs.getInt(3));
+	    	  spr.setParty(rs.getString(4));
+	    	  spr.setRegion(rs.getString(5));
 //	    	  candidate.setPhoto(rs.getString("photo"));
 //	    	  candidate.setAddinfo(rs.getString("addinfo"));
 //	    	  candidate.setRegion_id(rs.getInt("region_id"));

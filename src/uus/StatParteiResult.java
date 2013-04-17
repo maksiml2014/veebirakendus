@@ -4,6 +4,22 @@ public class StatParteiResult {
 	String name;
 	float pc;
 	int votes;
+	String party;
+	String region;
+	
+	
+	public String getParty() {
+		return party;
+	}
+	public void setParty(String party) {
+		this.party = party;
+	}
+	public String getRegion() {
+		return region;
+	}
+	public void setRegion(String region) {
+		this.region = region;
+	}
 	public String getName() {
 		return name;
 	}
