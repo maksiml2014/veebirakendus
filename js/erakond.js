@@ -200,7 +200,7 @@ function onMessage(err) {
 	}
 }
 function onError(){
-	alert("error");
+//	alert("error");s
 }
 
 function onClose() {
