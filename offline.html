@@ -5,8 +5,8 @@
 		<title>e-valimised</title>
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
         <link type="text/css" href="css/jquery-ui-1.8.13.custom.css" rel="stylesheet">
-        <link href="css/stylesheet.css" rel="stylesheet" media="screen">  
-		<script type="text/javascript" src="/_ah/channel/jsapi"></script>
+        <link href="css/stylesheet.css" rel="stylesheet" media="screen">
+        <script type="text/javascript" src="/_ah/channel/jsapi"></script>
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     	<script type="text/javascript" src= js/googlechart.js></script>        
         <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
@@ -18,16 +18,18 @@
 		<script src="js/login.js"></script>
         <script src="js/hidelogoutbutton.js"></script>
 		<script src="js/loading.js"></script>
+		<script src="js/search.js"></script>
 		<script src="js/sorttable.js"></script>
 		<script src="js/validation.js"></script>
 		<script src="js/loading.js"></script>
 		<script src="js/search.js"></script>
+		<script src="js/erakond.js"></script>
 		<script src="js/kandidaadiks.js"></script>
 		<script src="js/vote.js"></script>
 		<script src="js/fblogin.js"></script>
 		<script src="//connect.facebook.net/en_US/all.js"></script>
-
-  
+		
+        
         
 
     </head>
@@ -43,6 +45,7 @@
 					<div id="fb-root"></div>
 					<div id="user-info"></div>
 					<button id="loginbutton"></button>
+					<p>Offline ei saa sisse logida</p>
 					<!--
 					<input type="button" id="loginbutton" onclick="Login()" value="Sisene"/>
 					<input type="button" id="logoutbutton"  onclick="Logout()" value="Välju"/>
@@ -252,14 +255,14 @@
 							<div>
 								<input type="button" id="addvote" onclick="vote()" value="Hääleta"/>
 								<input type="button" id="deletevote" onclick="removevote()" value="Tühista hääl"/>
-								<p id="logississe"> Hääletamiseks logige sisse </p>
+								<p id="logississe"> Offline ei saa hääletada </p>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div id="Lisa_kandidaadiks">
 					<div id="pleaselogin">
-					<h1>Enda kandidatuuri lisamiseks logige palun sisse!</h1>
+					<h1>Offline ei saa kandideerida</h1>
 					<div id="lisavisible">
 					<h1> Lisa end kandidaadiks </h1>
 					<div id="row">
@@ -423,19 +426,6 @@
 			<br/>
 			Veebruar 2013
 		</div>
-
-
-
-
-
-		<script src="js/erakond.js"></script>
-		<script src="js/search.js"></script>
-		<script src="js/localstorage.js"></script>
-
-
-
-
-
 
     </body>
 </html>

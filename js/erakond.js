@@ -5,41 +5,78 @@
  * @param form
  */
 
-function onLoad(form){
+function onLoad(form) {
 	hidelogout();
 	sendGetToChannel();
 }
 
 function Stattable() {
 	
-
 	// function sending getrequest to channel
 	
 
 	var table = jQuery('#tablestat');
 	var table2 = jQuery('#tablestat2');
+	var table3 = jQuery('#tablestat3');
 	var piirkond = document.getElementById("statpiirkond").value;
 	var partei = document.getElementById("statpartei").value;
-	var link = "statpartei?statpiirkond=" + piirkond + "&statpartei=" + partei
-	var link2 = "statcandidate?statpiirkond=" + piirkond + "&statpartei="
-			+ partei
+	var link = "statpartei?statpiirkond=" + piirkond + "&statpartei=" + partei;
+	var link2 = "statcandidate?statpiirkond=" + piirkond + "&statpartei="+ partei;
 	var andmed = new Array();
+	jQuery(table2).empty();
+	table2.append(jQuery("<thead><th>Erakond</th><th>% häältest</th><th>hääli</th></thead><tbody>"));
 
+	jQuery(table3).empty();
+	table3.append(jQuery("<thead><th>Kandidaat</th><th>hääli</th></thead><tbody>"));
 	
-	jQuery(table2).empty()
-	table2
-			.append(jQuery("<thead><th>Erakond</th><th>% häältest</th><th>hääli</th></thead><tbody>"));
 	
+	if(navigator.onLine){
 	jQuery.getJSON(link, function(data) {
 		if (link=="statpartei?statpiirkond=0&statpartei=100"){
-			jQuery(table).empty()
-			table
-					.append(jQuery("<thead><th>Erakond</th><th>% häältest</th><th>hääli</th></thead><tbody>"));
+			jQuery(table).empty();
+			table.append(jQuery("<thead><th>Erakond</th><th>% häältest</th><th>hääli</th></thead><tbody>"));
 			jQuery.each(data, function(index, item) {
-				table2.append(jQuery("<tr><td>" + item.name + "</td><td>" + item.pc
-						+ "</td><td>" + item.votes + "</td></tr>"));
-				table.append(jQuery("<tr><td>" + item.name + "</td><td>" + item.pc
-						+ "</td><td>" + item.votes + "</td></tr>"));
+				table2.append(jQuery("<tr><td>" + item.name + "</td><td>" + item.pc	+ "</td><td>" + item.votes + "</td></tr>"));
+				table.append(jQuery("<tr><td>" + item.name + "</td><td>" + item.pc + "</td><td>" + item.votes + "</td></tr>"));
+				andmed.push([ item.name, item.votes ]);
+			});
+			table2.append(jQuery("</tr></tbody>"));
+			table.append(jQuery("</tr></tbody>"));
+			drawChart(andmed, 'map');
+			drawChart(andmed, 'chart_div');
+		}
+		
+		else{
+		jQuery.each(data, function(index, item) {
+			table2.append(jQuery("<tr><td>" + item.name + "</td><td>" + item.pc	+ "</td><td>" + item.votes + "</td></tr>"));
+			andmed.push([ item.name, item.votes ]);
+		});
+		table2.append(jQuery("</tr></tbody>"));
+		drawChart(andmed, 'chart_div');
+		}
+	});
+	
+	jQuery.getJSON(link2, function(data) {
+		jQuery.each(data, function(index, item) {
+			table3.append(jQuery("<tr><td>" + item.name + "</td><td>"+ item.votes + "</td></tr>"));
+		});
+		table3.append(jQuery("</tr></tbody>"));
+	});
+	}
+	
+	
+	
+	else{
+		
+		var object = JSON.parse(localStorage.getItem("statpartei"));
+		
+		if (link=="statpartei?statpiirkond=0&statpartei=100"){
+			jQuery(table).empty();
+			table.append(jQuery("<thead><th>Erakond</th><th>% häältest</th><th>hääli</th></thead><tbody>"));
+			jQuery.each(object, function(index, item) {
+				
+				table2.append(jQuery("<tr><td>" + item.name + "</td><td>" + item.pc	+ "</td><td>" + item.votes + "</td></tr>"));
+				table.append(jQuery("<tr><td>" + item.name + "</td><td>" + item.pc + "</td><td>" + item.votes + "</td></tr>"));
 				andmed.push([ item.name, item.votes ]);
 			});
 			table2.append(jQuery("</tr></tbody>"));
@@ -48,32 +85,70 @@ function Stattable() {
 			drawChart(andmed, 'map');
 			drawChart(andmed, 'chart_div');
 		}
+		
 		else{
-		jQuery.each(data, function(index, item) {
-			table2.append(jQuery("<tr><td>" + item.name + "</td><td>" + item.pc
-					+ "</td><td>" + item.votes + "</td></tr>"));
-			andmed.push([ item.name, item.votes ]);
-		});
-		table2.append(jQuery("</tr></tbody>"));
-		console.log(andmed);
-		drawChart(andmed, 'chart_div');
+			if(piirkond!=0 && partei==100){
+				jQuery.each(object, function(index, item) {
+					if(item.region==piirkond){
+					table2.append(jQuery("<tr><td>" + item.name + "</td><td>" + item.pc	+ "</td><td>" + item.votes + "</td></tr>"));
+					andmed.push([ item.name, item.votes ]);
+					}
+				});		
+			}
+			else if(piirkond==0 && partei!=100){
+				jQuery.each(object, function(index, item) {
+					if(item.party==partei){
+					table2.append(jQuery("<tr><td>" + item.name + "</td><td>" + item.pc	+ "</td><td>" + item.votes + "</td></tr>"));
+					andmed.push([ item.name, item.votes ]);
+					}
+				});				
+			}
+			else if(piirkond!=0 && partei !=100){
+				jQuery.each(object, function(index, item) {
+					if(item.region==piirkond && item.party==partei){
+					table2.append(jQuery("<tr><td>" + item.name + "</td><td>" + item.pc	+ "</td><td>" + item.votes + "</td></tr>"));
+					andmed.push([ item.name, item.votes ]);
+					}
+				});
+			}
+			table2.append(jQuery("</tr></tbody>"));
+			drawChart(andmed, 'chart_div');
+		
+	
+	
+			var object = JSON.parse(localStorage.getItem("statcandidate"));
+			if(partei==100 && piirkond==0){
+				jQuery.each(object, function(index, item) {
+					table3.append(jQuery("<tr><td>" + item.name + "</td><td>"+ item.votes + "</td></tr>"));
+				});
+			}else{
+				if(piirkond!=0 && partei==100){
+					jQuery.each(object, function(index, item) {
+						if (item.region==piirkond){
+						table3.append(jQuery("<tr><td>" + item.name + "</td><td>"+ item.votes + "</td></tr>"));
+						}
+					});
+				}else if(piirkond==0 && partei !=100){
+					jQuery.each(object, function(index, item) {
+						if(item.party==partei){
+						table3.append(jQuery("<tr><td>" + item.name + "</td><td>"+ item.votes + "</td></tr>"));
+						}
+						});
+				} else if (piirkond!=0 && partei !=100){
+					jQuery.each(object, function(index, item) {
+						if (item.party==party && item.region== piirkond){
+						table3.append(jQuery("<tr><td>" + item.name + "</td><td>"+ item.votes + "</td></tr>"));
+						}
+				});
+				}
+				
+			}
+			table3.append(jQuery("</tr></tbody>"));
+			
 		}
-	});
-
-	
-	
-	var table3 = jQuery('#tablestat3')
-	jQuery(table3).empty()
-	table3
-			.append(jQuery("<thead><th>Kandidaat</th><th>hääli</th></thead><tbody>"));
-	jQuery.getJSON(link2, function(data) {
-		jQuery.each(data, function(index, item) {
-			table3.append(jQuery("<tr><td>" + item.name + "</td><td>"
-					+ item.votes + "</td></tr>"));
-		});
-		table3.append(jQuery("</tr></tbody>"));
-	});
-
+			
+		
+		}	
 }
 /**
  * id of a browser session for web socket
@@ -87,7 +162,7 @@ var id = "";
  */
 function sendGetToChannel() {
 	var token = "";
-	var link = "/channel?id="
+	var link = "/channel?id=";
 //	if (id != "") {
 	id = new Date().getTime();
 //	}
@@ -133,3 +208,5 @@ function onClose() {
 }
 
 //function sendUpdateToChannel(update)
+
+

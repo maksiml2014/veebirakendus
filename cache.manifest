@@ -1,6 +1,6 @@
 CACHE MANIFEST
 
-#ver2
+#ver3
 
 FALLBACK:
 / /offline.html
@@ -29,6 +29,7 @@ CACHE:
 /js/tabs.js
 /js/validation.js
 /js/vote.js
+/js/localstorage.js
 /images/tick-in-checkbox-md.png
 NETWORK:
 *
