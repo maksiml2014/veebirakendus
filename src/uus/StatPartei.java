@@ -50,7 +50,7 @@ public class StatPartei extends HttpServlet {
 		      
 		      
 	      DriverManager.registerDriver(new AppEngineDriver());
-	      c = DriverManager.getConnection("jdbc:google:rdbms://evalimised-ut-andmebaas:andmebaas/performance_schema");
+	      c = DriverManager.getConnection("jdbc:google:rdbms://evalimised-ut-andmebaas:andmebaas/evalimised");
 //	      String fname = req.getParameter("fname");
 //	      String content = req.getParameter("content");
 //	      if (fname == "" || content == "") {
@@ -109,7 +109,7 @@ public class StatPartei extends HttpServlet {
 	            c.close();
 	            } catch (SQLException ignore) {
 	         }
-	      } //resp.setHeader("Refresh","3; url=/performance_schema.jsp");
+	      } //resp.setHeader("Refresh","3; url=/evalimised.jsp");
 	  }
 	
 	@Override
@@ -122,7 +122,7 @@ public class StatPartei extends HttpServlet {
 		try {
 			DriverManager.registerDriver(new AppEngineDriver());
 			c = DriverManager
-					.getConnection("jdbc:google:rdbms://evalimised-ut-andmebaas:andmebaas/performance_schema");
+					.getConnection("jdbc:google:rdbms://evalimised-ut-andmebaas:andmebaas/evalimised");
 
 			String candidate_name = req.getParameter("candidate_name");
 			String party_id = req.getParameter("party");

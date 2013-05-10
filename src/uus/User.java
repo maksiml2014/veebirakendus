@@ -38,7 +38,7 @@ public class User extends HttpServlet {
 		try {
 			DriverManager.registerDriver(new AppEngineDriver());
 			c = DriverManager
-					.getConnection("jdbc:google:rdbms://evalimised-ut-andmebaas:andmebaas/performance_schema");
+					.getConnection("jdbc:google:rdbms://evalimised-ut-andmebaas:andmebaas/evalimised");
 
 			
 			user_name = req.getParameter("user_name");

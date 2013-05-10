@@ -50,7 +50,7 @@ var party10;
 var party11;
 var party12;
 
-
+var isMap=false;
 
 function Stattable() {
 	
@@ -163,7 +163,10 @@ function Stattable() {
 			table.append(jQuery("</tr></tbody>"));
 			drawChart(andmed, 'map');
 			drawChart(andmed, 'chart_div');
-			initialize();			
+			if (isMap==false){
+				initialize();
+				isMap=true;
+			}
 			
 		}
 		

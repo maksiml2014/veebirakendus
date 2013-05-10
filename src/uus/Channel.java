@@ -62,7 +62,7 @@ public class Channel extends HttpServlet {
 		try {
 			DriverManager.registerDriver(new AppEngineDriver());
 			c = DriverManager
-					.getConnection("jdbc:google:rdbms://evalimised-ut-andmebaas:andmebaas/performance_schema");
+					.getConnection("jdbc:google:rdbms://evalimised-ut-andmebaas:andmebaas/evalimised");
 
 			id = req.getParameter("id");
 			String token = "";

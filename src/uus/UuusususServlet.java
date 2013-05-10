@@ -31,7 +31,7 @@ public class UuusususServlet extends HttpServlet {
 		try {
 			DriverManager.registerDriver(new AppEngineDriver());
 			c = DriverManager
-					.getConnection("jdbc:google:rdbms://evalimised-ut-andmebaas:andmebaas/performance_schema");
+					.getConnection("jdbc:google:rdbms://evalimised-ut-andmebaas:andmebaas/evalimised");
 			// String fname = req.getParameter("fname");
 			// String content = req.getParameter("content");
 			// if (fname == "" || content == "") {
@@ -75,7 +75,7 @@ public class UuusususServlet extends HttpServlet {
 					c.close();
 				} catch (SQLException ignore) {
 				}
-		} // resp.setHeader("Refresh","3; url=/performance_schema.jsp");
+		} // resp.setHeader("Refresh","3; url=/evalimised.jsp");
 	}
 
 	@Override
@@ -92,7 +92,7 @@ public class UuusususServlet extends HttpServlet {
 		try {
 			DriverManager.registerDriver(new AppEngineDriver());
 			c = DriverManager
-					.getConnection("jdbc:google:rdbms://evalimised-ut-andmebaas:andmebaas/performance_schema");
+					.getConnection("jdbc:google:rdbms://evalimised-ut-andmebaas:andmebaas/evalimised");
 
 			// candidate_id = req.getParameter("candidate_id");
 			user_name = req.getParameter("user_name");

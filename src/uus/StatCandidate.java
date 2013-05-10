@@ -33,7 +33,7 @@ public class StatCandidate extends HttpServlet {
 		try {
 			DriverManager.registerDriver(new AppEngineDriver());
 			c = DriverManager
-					.getConnection("jdbc:google:rdbms://evalimised-ut-andmebaas:andmebaas/performance_schema");
+					.getConnection("jdbc:google:rdbms://evalimised-ut-andmebaas:andmebaas/evalimised");
 			String party = req.getParameter("statpartei");
 			String region = req.getParameter("statpiirkond");
 
@@ -103,7 +103,7 @@ public class StatCandidate extends HttpServlet {
 		try {
 			DriverManager.registerDriver(new AppEngineDriver());
 			c = DriverManager
-					.getConnection("jdbc:google:rdbms://evalimised-ut-andmebaas:andmebaas/performance_schema");
+					.getConnection("jdbc:google:rdbms://evalimised-ut-andmebaas:andmebaas/evalimised");
 
 			candidate_id = req.getParameter("candidate_id");
 			user_name = req.getParameter("user_name");
